@@ -1,5 +1,5 @@
 // API Base URL - Change this when deploying to production
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://66.29.133.39:5000';
 
 // Carousel API
 export const getCarousels = async () => {
