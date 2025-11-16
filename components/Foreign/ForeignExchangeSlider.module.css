@@ -1,0 +1,106 @@
+.forexTicker {
+  background-color: #ffffff;
+  padding: 12px 12px;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+.forexContent {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.forexLabelBtn {
+  flex-shrink: 0;
+  background-image: linear-gradient(0deg, rgb(10, 59, 115) 0%, rgb(14, 81, 154) 100%);
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.forexLabelBtn:hover {
+  opacity: 0.9;
+}
+
+.forexLabelBtn span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.forexScroll {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.forexScrollInner {
+  display: flex;
+  gap: 32px;
+  width: max-content;
+}
+
+.forexItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.forexRate {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.forexFlag {
+  font-size: 24px;
+}
+
+.forexCurrency {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.forexType {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.forexValue {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.forexSeparator {
+  color: #d1d5db;
+}
+
+.forexDivider {
+  width: 1px;
+  height: 24px;
+  background-color: #e5e7eb;
+}
+
+.forexViewAll {
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #22c55e;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.forexViewAll:hover {
+  color: #16a34a;
+}
+
