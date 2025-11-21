@@ -1,5 +1,5 @@
 // API Base URL - Change this when deploying to production
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'https://service.mwalimubank.co.tz';
 
 // Carousel API
 export const getCarousels = async () => {
