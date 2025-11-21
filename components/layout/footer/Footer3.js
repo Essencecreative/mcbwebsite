@@ -51,7 +51,7 @@ export default function Footer3() {
                         <li><Link href="/careers-details">Career Detail</Link></li>
                         <li><Link href="/faq">Faq’s</Link></li>
                         <li><Link href="/blog-2">List View</Link></li>
-                        <li><Link href="/contact">Get In Touch</Link></li>
+                        <li><a href="#" style={{ cursor: 'default', pointerEvents: 'none', textDecoration: 'none', color: 'inherit' }}>Get In Touch</a></li>
                         </ul>
                     </div>
                     </div>

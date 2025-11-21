@@ -71,7 +71,7 @@ export default function Footer1() {
                     <div className="footer-widget-links">
                         <ul>
                         <li><Link href="/board-of-directors">Board Of Directors</Link></li>
-                        <li><Link href="/contact">Contact</Link></li>
+                        <li><a href="#" style={{ cursor: 'default', pointerEvents: 'none', textDecoration: 'none', color: 'inherit' }}>Contact</a></li>
                         <li><Link href="/faq">FAQ</Link></li>
                         <li><Link href="/opportunities">Careers</Link></li>
                         </ul>

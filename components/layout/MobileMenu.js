@@ -223,8 +223,8 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
                   About
                 </Link>
                 <ul style={{ display: `${isActive.key == 7 ? "block" : "none"}` }}>
-                  <li><Link href="/history" onClick={handleMobileMenu}>History</Link></li>
-                  <li><Link href="/team" onClick={handleMobileMenu}>Mission, Vision & Values</Link></li>
+                  <li><a href="#" style={{ cursor: 'default', pointerEvents: 'none', textDecoration: 'none', color: 'inherit' }}>History</a></li>
+                  <li><a href="#" style={{ cursor: 'default', pointerEvents: 'none', textDecoration: 'none', color: 'inherit' }}>Mission, Vision & Values</a></li>
                   <li><Link href="/board-of-directors" onClick={handleMobileMenu}>Board of Directors</Link></li>
                   <li><Link href="/team" onClick={handleMobileMenu}>Management</Link></li>
                   <li><Link href="/faq" onClick={handleMobileMenu}>FAQ</Link></li>

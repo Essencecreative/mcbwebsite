@@ -53,7 +53,7 @@ export default function Header1({
               </div>
 
               <div className="nearest-branch">
-                <a href="/contact">Contact Us</a>
+                <a href="#" style={{ cursor: 'default', pointerEvents: 'none', textDecoration: 'none', color: 'inherit' }}>Contact Us</a>
               </div>
 
               {/* TALL DIVIDER + News & Updates + Opportunities */}

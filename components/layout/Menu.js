@@ -131,8 +131,8 @@ export default function Menu() {
                 <li className="dropdown">
                     <Link href="#">About</Link>
                     <ul>
-                        <li><Link href="/history">History</Link></li>
-                        <li><Link href="/team">Mission, Vision & Values</Link></li>
+                        <li><a href="#" style={{ cursor: 'default', pointerEvents: 'none', textDecoration: 'none', color: 'inherit' }}>History</a></li>
+                        <li><a href="#" style={{ cursor: 'default', pointerEvents: 'none', textDecoration: 'none', color: 'inherit' }}>Mission, Vision & Values</a></li>
                         <li><Link href="/board-of-directors">Board of Directors</Link></li>
                         <li><Link href="/team">Management</Link></li>
                         <li><Link href="/faq">FAQ</Link></li>
@@ -152,7 +152,7 @@ export default function Menu() {
                     <Link href="#">About</Link>
                     <ul>
                         <li><Link href="/history">History</Link></li>
-                        <li><Link href="/team">Mission, Vision & Values</Link></li>
+                        <li><Link href="/about">Mission, Vision & Values</Link></li>
                         <li><Link href="/board-of-directors">Board of Directors</Link></li>
                         <li><Link href="/team">Management</Link></li>
                         <li><Link href="/faq">FAQ</Link></li>

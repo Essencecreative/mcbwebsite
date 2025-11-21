@@ -97,7 +97,7 @@ export default function Footer2() {
                                         <Link href="/cards-cashback">Cashback</Link>
                                     </li>
                                     <li>
-                                        <Link href="/contact">Get In Touch</Link>
+                                        <a href="#" style={{ cursor: 'default', pointerEvents: 'none', textDecoration: 'none', color: 'inherit' }}>Get In Touch</a>
                                     </li>
                                     <li>
                                         <Link href="/cards-rewards">Rewards</Link>
