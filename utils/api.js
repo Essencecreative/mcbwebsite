@@ -1,6 +1,9 @@
 // API Base URL - Change this when deploying to production
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'https://service.mwalimubank.co.tz';
 
+// Import cache utilities
+import { getCachedData, setCachedData } from './cache';
+
 // Carousel API
 export const getCarousels = async () => {
   try {
@@ -158,21 +161,43 @@ export const getInvestorCategories = async (category, page = 1, limit = 10) => {
   }
 };
 
-// Menu Categories API
+// Menu Categories API with caching
 export const getMenuCategories = async () => {
+  const cacheKey = 'menu_categories';
+  
+  // Check cache first
+  const cached = getCachedData(cacheKey);
+  if (cached) {
+    return cached;
+  }
+  
   try {
     const res = await fetch(`${API_BASE}/menu-categories`);
     if (!res.ok) throw new Error("Failed to fetch menu categories");
     const data = await res.json();
-    return data.categories || [];
+    const categories = data.categories || [];
+    
+    // Cache the result
+    setCachedData(cacheKey, categories);
+    
+    return categories;
   } catch (error) {
     console.error("Error fetching menu categories:", error);
     return [];
   }
 };
 
-// Menu Items API
+// Menu Items API with caching
 export const getMenuItems = async (menuCategory, subcategory, route) => {
+  // Create a unique cache key based on parameters
+  const cacheKey = `menu_items_${menuCategory || 'all'}_${subcategory || 'all'}_${route || 'all'}`;
+  
+  // Check cache first
+  const cached = getCachedData(cacheKey);
+  if (cached) {
+    return cached;
+  }
+  
   try {
     let url = `${API_BASE}/menu-items?isActive=true`;
     if (menuCategory) url += `&menuCategory=${menuCategory}`;
@@ -182,7 +207,12 @@ export const getMenuItems = async (menuCategory, subcategory, route) => {
     const res = await fetch(url);
     if (!res.ok) throw new Error("Failed to fetch menu items");
     const data = await res.json();
-    return data.items || [];
+    const items = data.items || [];
+    
+    // Cache the result
+    setCachedData(cacheKey, items);
+    
+    return items;
   } catch (error) {
     console.error("Error fetching menu items:", error);
     return [];
@@ -198,10 +228,13 @@ export const getMenuItemsByRoute = async (route, type) => {
     const res = await fetch(url);
     if (!res.ok) throw new Error("Failed to fetch menu items by route");
     const data = await res.json();
-    return data.items || [];
+    return {
+      items: data.items || [],
+      subcategoryBanner: data.subcategoryBanner || null
+    };
   } catch (error) {
     console.error("Error fetching menu items by route:", error);
-    return [];
+    return { items: [], subcategoryBanner: null };
   }
 };
 
