@@ -54,49 +54,103 @@ export default function Home() {
                                     </div>
                                 </div>
                             ) : (
-                                <div className="row">
-                                    {members.map((member, index) => (
-                                        <div key={member._id || index} className="col-xl-3 col-lg-6 col-md-6">
-                                            <div
-                                                className="single-team-style1 wow fadeInUp"
-                                                data-wow-delay={delays[index % delays.length]}
-                                                data-wow-duration="1500ms"
-                                            >
-                                                <div className="img-holder">
-                                                    <div className="inner">
-                                                        <img 
-                                                            src={getImageUrl(member.photo)} 
-                                                            alt={member.fullName}
-                                                            onError={(e) => {
-                                                                e.target.src = "/assets/images/team/Management-01.png"
-                                                            }}
-                                                        />
-                                                        {member.linkedinLink && (
-                                                            <div className="share-button">
-                                                                <div className="icon">
-                                                                    <span className="fas fa-plus" />
+                                <>
+                                    {/* First member centered */}
+                                    {members.length > 0 && (
+                                        <div className="row" style={{ marginBottom: '40px' }}>
+                                            <div className="col-xl-12 text-center">
+                                                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                                    <div style={{ maxWidth: '300px', width: '100%' }}>
+                                                        <div
+                                                            className="single-team-style1 wow fadeInUp"
+                                                            data-wow-delay={delays[0]}
+                                                            data-wow-duration="1500ms"
+                                                        >
+                                                            <div className="img-holder">
+                                                                <div className="inner">
+                                                                    <img 
+                                                                        src={getImageUrl(members[0].photo)} 
+                                                                        alt={members[0].fullName}
+                                                                        onError={(e) => {
+                                                                            e.target.src = "/assets/images/team/Management-01.png"
+                                                                        }}
+                                                                    />
+                                                                    {members[0].linkedinLink && (
+                                                                        <div className="share-button">
+                                                                            <div className="icon">
+                                                                                <span className="fas fa-plus" />
+                                                                            </div>
+                                                                            <ul className="social-links">
+                                                                                <li>
+                                                                                    <Link href={members[0].linkedinLink} target="_blank" rel="noopener noreferrer">
+                                                                                        <i className="fab fa-linkedin" />
+                                                                                    </Link>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    )}
                                                                 </div>
-                                                                <ul className="social-links">
-                                                                    <li>
-                                                                        <Link href={member.linkedinLink} target="_blank" rel="noopener noreferrer">
-                                                                            <i className="fab fa-linkedin" />
-                                                                        </Link>
-                                                                    </li>
-                                                                </ul>
                                                             </div>
-                                                        )}
+                                                            <div className="text-holder">
+                                                                <h3>
+                                                                    <Link href="#">{members[0].title}</Link>
+                                                                </h3>
+                                                                <h5>{members[0].fullName}</h5>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div className="text-holder">
-                                                    <h3>
-                                                        <Link href="#">{member.title}</Link>
-                                                    </h3>
-                                                    <h5>{member.fullName}</h5>
                                                 </div>
                                             </div>
                                         </div>
-                                    ))}
-                                </div>
+                                    )}
+
+                                    {/* Remaining members in rows of 4 */}
+                                    {members.length > 1 && (
+                                        <div className="row">
+                                            {members.slice(1).map((member, index) => (
+                                                <div key={member._id || index + 1} className="col-xl-3 col-lg-6 col-md-6">
+                                                    <div
+                                                        className="single-team-style1 wow fadeInUp"
+                                                        data-wow-delay={delays[(index + 1) % delays.length]}
+                                                        data-wow-duration="1500ms"
+                                                    >
+                                                        <div className="img-holder">
+                                                            <div className="inner">
+                                                                <img 
+                                                                    src={getImageUrl(member.photo)} 
+                                                                    alt={member.fullName}
+                                                                    onError={(e) => {
+                                                                        e.target.src = "/assets/images/team/Management-01.png"
+                                                                    }}
+                                                                />
+                                                                {member.linkedinLink && (
+                                                                    <div className="share-button">
+                                                                        <div className="icon">
+                                                                            <span className="fas fa-plus" />
+                                                                        </div>
+                                                                        <ul className="social-links">
+                                                                            <li>
+                                                                                <Link href={member.linkedinLink} target="_blank" rel="noopener noreferrer">
+                                                                                    <i className="fab fa-linkedin" />
+                                                                                </Link>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                )}
+                                                            </div>
+                                                        </div>
+                                                        <div className="text-holder">
+                                                            <h3>
+                                                                <Link href="#">{member.title}</Link>
+                                                            </h3>
+                                                            <h5>{member.fullName}</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                </>
                             )}
                         </div>
                     </section>
