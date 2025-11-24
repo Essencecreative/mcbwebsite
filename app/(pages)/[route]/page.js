@@ -17,20 +17,23 @@ export default function DynamicMenuPage() {
   const [loading, setLoading] = useState(true);
   const [activeType, setActiveType] = useState(null);
 
+  const [subcategoryBanner, setSubcategoryBanner] = useState(null);
+
   useEffect(() => {
     const fetchMenuItems = async () => {
       try {
         setLoading(true);
         const typeFromQuery = searchParams.get("type");
-        const items = await getMenuItemsByRoute(`/${route}`, typeFromQuery);
-        setMenuItems(items);
+        const result = await getMenuItemsByRoute(`/${route}`, typeFromQuery);
+        setMenuItems(result.items);
+        setSubcategoryBanner(result.subcategoryBanner);
 
-        if (items.length > 0) {
+        if (result.items.length > 0) {
           // Set active type from query or default to first item
           const activeItem = typeFromQuery
-            ? items.find(item => item.name === decodeURIComponent(typeFromQuery))
-            : items[0];
-          setActiveType(activeItem?.name || items[0]?.name);
+            ? result.items.find(item => item.name === decodeURIComponent(typeFromQuery))
+            : result.items[0];
+          setActiveType(activeItem?.name || result.items[0]?.name);
         }
       } catch (error) {
         console.error("Error fetching menu items:", error);
@@ -104,13 +107,18 @@ export default function DynamicMenuPage() {
   const pageContent = activeItem?.pageContent || {};
   const itemNames = menuItems.map(item => item.name);
 
+  // Use subcategory banner image if available, otherwise fallback to default
+  const bannerImage = subcategoryBanner 
+    ? getImageUrl(subcategoryBanner) 
+    : (pageContent.bannerImage ? getImageUrl(pageContent.bannerImage) : "/assets/images/backgrounds/Transactional-Account-Banner.png");
+
   return (
     <Layout
       headerStyle={1}
       footerStyle={1}
       breadcrumbTitle={pageContent.breadcrumbTitle || activeItem?.name || 'Page'}
       breadcrumbSubTitle={pageContent.breadcrumbSubTitle || ''}
-      backgroundImage={pageContent.bannerImage ? getImageUrl(pageContent.bannerImage) : "/assets/images/backgrounds/Transactional-Account-Banner.png"}
+      backgroundImage={bannerImage}
     >
       <section className="cards-area" style={{ marginTop: 100 }}>
         <div className="container">
