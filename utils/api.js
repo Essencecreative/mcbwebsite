@@ -349,7 +349,18 @@ export const submitApplicationForm = async (formData, formType) => {
 // Helper function to get full image URL
 export const getImageUrl = (imagePath) => {
   if (!imagePath) return '';
-  if (imagePath.startsWith('http')) return imagePath;
-  return `${API_BASE}/${imagePath}`;
+  
+  // If already a full URL, return as-is
+  if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
+    return imagePath;
+  }
+  
+  // Remove leading slash if present to avoid double slashes
+  const cleanPath = imagePath.startsWith('/') ? imagePath.substring(1) : imagePath;
+  
+  // Ensure API_BASE doesn't have a trailing slash
+  const baseUrl = API_BASE.endsWith('/') ? API_BASE.slice(0, -1) : API_BASE;
+  
+  return `${baseUrl}/${cleanPath}`;
 };
 
