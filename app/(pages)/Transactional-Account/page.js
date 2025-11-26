@@ -14,6 +14,7 @@ export default function TransactionalAccount() {
   const [menuItems, setMenuItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeType, setActiveType] = useState(null);
+  const [subcategoryBanner, setSubcategoryBanner] = useState(null);
 
   useEffect(() => {
     const fetchMenuItems = async () => {
@@ -22,6 +23,7 @@ export default function TransactionalAccount() {
         const result = await getMenuItemsByRoute("/Transactional-Account");
         const items = result?.items || [];
         setMenuItems(items);
+        setSubcategoryBanner(result?.subcategoryBanner || null);
 
         if (items.length > 0) {
           const typeFromQuery = searchParams.get("type");
@@ -100,13 +102,18 @@ export default function TransactionalAccount() {
   const pageContent = activeItem?.pageContent || {};
   const itemNames = menuItems.map(item => item.name);
 
+  // Use subcategory banner image if available, otherwise fallback to pageContent banner or default
+  const bannerImage = subcategoryBanner 
+    ? getImageUrl(subcategoryBanner) 
+    : (pageContent.bannerImage ? getImageUrl(pageContent.bannerImage) : "/assets/images/backgrounds/Transactional-Account-Banner.png");
+
   return (
     <Layout
       headerStyle={1}
       footerStyle={1}
       breadcrumbTitle={pageContent.breadcrumbTitle || "Transactional Account"}
       breadcrumbSubTitle={pageContent.breadcrumbSubTitle || ""}
-      backgroundImage={pageContent.bannerImage ? getImageUrl(pageContent.bannerImage) : "/assets/images/backgrounds/Transactional-Account-Banner.png"}
+      backgroundImage={bannerImage}
     >
       <section className="cards-area" style={{marginTop: 100}}>
         <div className="container">

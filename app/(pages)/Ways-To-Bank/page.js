@@ -14,6 +14,7 @@ export default function WaysToBank() {
   const [menuItems, setMenuItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeType, setActiveType] = useState(null);
+  const [subcategoryBanner, setSubcategoryBanner] = useState(null);
 
   // Filter states for Wakala
   const [filterRegion, setFilterRegion] = useState("");
@@ -28,6 +29,7 @@ export default function WaysToBank() {
         const result = await getMenuItemsByRoute("/Ways-To-Bank");
         const items = result?.items || [];
         setMenuItems(items);
+        setSubcategoryBanner(result?.subcategoryBanner || null);
 
         if (items.length > 0) {
           const typeFromQuery = searchParams.get("type");
@@ -133,7 +135,9 @@ export default function WaysToBank() {
       footerStyle={1}
       breadcrumbTitle={pageContent.breadcrumbTitle || "Ways To Bank"}
       breadcrumbSubTitle={pageContent.breadcrumbSubTitle || ""}
-      backgroundImage={pageContent.bannerImage ? getImageUrl(pageContent.bannerImage) : "/assets/images/backgrounds/Ways-To-Bank-Banner.png"}
+      backgroundImage={subcategoryBanner 
+        ? getImageUrl(subcategoryBanner) 
+        : (pageContent.bannerImage ? getImageUrl(pageContent.bannerImage) : "/assets/images/backgrounds/Ways-To-Bank-Banner.png")}
     >
       <section className="cards-area" style={{ marginTop: 100 }}>
         <div className="container">
