@@ -19,7 +19,8 @@ export default function Invest() {
     const fetchMenuItems = async () => {
       try {
         setLoading(true);
-        const items = await getMenuItemsByRoute("/Invest");
+        const result = await getMenuItemsByRoute("/Invest");
+        const items = result?.items || [];
         setMenuItems(items);
 
         if (items.length > 0) {

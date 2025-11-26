@@ -19,7 +19,8 @@ export default function LoanAccount() {
     const fetchMenuItems = async () => {
       try {
         setLoading(true);
-        const items = await getMenuItemsByRoute("/Loan-Account");
+        const result = await getMenuItemsByRoute("/Loan-Account");
+        const items = result?.items || [];
         setMenuItems(items);
 
         if (items.length > 0) {

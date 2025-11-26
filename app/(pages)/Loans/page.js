@@ -19,7 +19,8 @@ export default function Loans() {
     const fetchMenuItems = async () => {
       try {
         setLoading(true);
-        const items = await getMenuItemsByRoute("/Loans");
+        const result = await getMenuItemsByRoute("/Loans");
+        const items = result?.items || [];
         setMenuItems(items);
 
         if (items.length > 0) {

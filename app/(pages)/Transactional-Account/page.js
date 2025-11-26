@@ -19,7 +19,8 @@ export default function TransactionalAccount() {
     const fetchMenuItems = async () => {
       try {
         setLoading(true);
-        const items = await getMenuItemsByRoute("/Transactional-Account");
+        const result = await getMenuItemsByRoute("/Transactional-Account");
+        const items = result?.items || [];
         setMenuItems(items);
 
         if (items.length > 0) {

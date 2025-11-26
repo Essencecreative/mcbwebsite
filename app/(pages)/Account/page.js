@@ -19,7 +19,8 @@ export default function Account() {
     const fetchMenuItems = async () => {
       try {
         setLoading(true);
-        const items = await getMenuItemsByRoute("/Account");
+        const result = await getMenuItemsByRoute("/Account");
+        const items = result?.items || [];
         setMenuItems(items);
 
         if (items.length > 0) {

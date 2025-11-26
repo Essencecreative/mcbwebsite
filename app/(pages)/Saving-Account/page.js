@@ -19,7 +19,8 @@ export default function SavingsAccount() {
     const fetchMenuItems = async () => {
       try {
         setLoading(true);
-        const items = await getMenuItemsByRoute("/Saving-Account");
+        const result = await getMenuItemsByRoute("/Saving-Account");
+        const items = result?.items || [];
         setMenuItems(items);
 
         if (items.length > 0) {

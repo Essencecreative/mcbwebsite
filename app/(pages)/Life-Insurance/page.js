@@ -19,7 +19,8 @@ export default function LifeInsurance() {
     const fetchMenuItems = async () => {
       try {
         setLoading(true);
-        const items = await getMenuItemsByRoute("/Life-Insurance");
+        const result = await getMenuItemsByRoute("/Life-Insurance");
+        const items = result?.items || [];
         setMenuItems(items);
 
         if (items.length > 0) {

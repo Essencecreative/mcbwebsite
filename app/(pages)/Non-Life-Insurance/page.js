@@ -19,7 +19,8 @@ export default function NonLifeInsurance() {
     const fetchMenuItems = async () => {
       try {
         setLoading(true);
-        const items = await getMenuItemsByRoute("/Non-Life-Insurance");
+        const result = await getMenuItemsByRoute("/Non-Life-Insurance");
+        const items = result?.items || [];
         setMenuItems(items);
 
         if (items.length > 0) {

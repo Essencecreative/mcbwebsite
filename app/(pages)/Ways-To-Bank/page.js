@@ -25,7 +25,8 @@ export default function WaysToBank() {
     const fetchMenuItems = async () => {
       try {
         setLoading(true);
-        const items = await getMenuItemsByRoute("/Ways-To-Bank");
+        const result = await getMenuItemsByRoute("/Ways-To-Bank");
+        const items = result?.items || [];
         setMenuItems(items);
 
         if (items.length > 0) {
