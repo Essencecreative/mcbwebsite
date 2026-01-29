@@ -589,6 +589,16 @@
     padding-left: 15px;
 }
 
+/* Enable History and Mission links - override any disabled styles */
+.main-menu .main-menu__list>li>ul>li>a[href="/history"],
+.main-menu .main-menu__list>li>ul>li>a[href="/team"],
+.stricky-header .main-menu__list>li>ul>li>a[href="/history"],
+.stricky-header .main-menu__list>li>ul>li>a[href="/team"] {
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    text-decoration: none !important;
+}
+
 .main-menu .main-menu__list>li>ul>li>ul,
 .stricky-header .main-menu__list>li>ul>li>ul {
     top: 0;

@@ -138,8 +138,8 @@ export default function Menu() {
                 <li className="dropdown">
                     <Link href="#">About</Link>
                     <ul>
-                        <li><a href="#" style={{ cursor: 'default', pointerEvents: 'none', textDecoration: 'none', color: 'inherit' }}>History</a></li>
-                        <li><a href="#" style={{ cursor: 'default', pointerEvents: 'none', textDecoration: 'none', color: 'inherit' }}>Mission, Vision & Values</a></li>
+                        <li><Link href="/history" style={{ cursor: 'pointer', pointerEvents: 'auto' }}>History</Link></li>
+                        <li><Link href="/team" style={{ cursor: 'pointer', pointerEvents: 'auto' }}>Mission, Vision & Values</Link></li>
                         <li><Link href="/board-of-directors">Board of Directors</Link></li>
                         <li><Link href="/team">Management</Link></li>
                         <li><Link href="/faq">FAQ</Link></li>
@@ -167,6 +167,19 @@ export default function Menu() {
                     </ul>
                 </li>
             </ul>
+            <style jsx>{`
+                .main-menu__list li ul li a[href="/history"],
+                .main-menu__list li ul li a[href="/team"] {
+                    cursor: pointer !important;
+                    pointer-events: auto !important;
+                    text-decoration: none !important;
+                    color: inherit !important;
+                }
+                .main-menu__list li ul li a[href="/history"]:hover,
+                .main-menu__list li ul li a[href="/team"]:hover {
+                    color: var(--thm-base) !important;
+                }
+            `}</style>
         </>
     );
 }
