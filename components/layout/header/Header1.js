@@ -214,6 +214,17 @@ export default function Header1({
           text-decoration: underline;
         }
 
+        .nearest-branch a {
+          cursor: pointer !important;
+          pointer-events: auto !important;
+          text-decoration: none;
+        }
+
+        .nearest-branch a:hover {
+          color: #e97927;
+          text-decoration: underline;
+        }
+
         .divider {
           display: inline-block;
           width: 1px;
