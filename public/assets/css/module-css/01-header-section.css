@@ -112,23 +112,6 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.mobile-nav__content .logo-box a {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-}
-
-.mobile-nav__content .logo-box img {
-    max-width: 150px;
-    width: 150px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
 }
 
 
