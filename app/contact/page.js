@@ -455,7 +455,7 @@ export default function Home() {
                     </section>
                     {/*CTA One End*/}
 
-                    {/* Remove border between table rows and make location bold */}
+                    {/* Remove border between table rows, make location bold, and style MCB HQ tab */}
                     <style jsx>{`
                         .customer-care-numbers-table tbody tr {
                             border-bottom: none !important;
@@ -466,6 +466,13 @@ export default function Home() {
                         .customer-care-numbers-table tbody tr td.inner-title h3 {
                             font-weight: 700 !important;
                             font-style: normal !important;
+                        }
+                        .customer-care-numbers-tab__button .tabs-button-box .tab-btn-item.active-btn-item {
+                            background-image: linear-gradient(0deg, #0A3B73 0%, #0E519A 100%) !important;
+                            color: #ffffff !important;
+                        }
+                        .customer-care-numbers-tab__button .tabs-button-box .tab-btn-item.active-btn-item h4 {
+                            color: #ffffff !important;
                         }
                     `}</style>
 
