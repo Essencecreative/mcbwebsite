@@ -268,14 +268,17 @@ export default function Home() {
                     {/* Google Map Section */}
                     <section className="google-map">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4562.753041141002!2d-118.80123790098536!3d34.152323469614075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e82469c2162619%3A0xba03efb7998eef6d!2sCostco+Wholesale!5e0!3m2!1sbn!2sbd!4v1562518641290!5m2!1sbn!2sbd"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.0!2d39.0!3d-6.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zRk1NMkczek1qWWtra3h2TDc!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
                         className="google-map__one" 
                         allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
                     ></iframe>
-                        {/* <div className="google-map-content-box">
+                        {/* Commented out: black bar section with tabs, search, and content box */}
+                        {/* 
+                        <div className="google-map-content-box">
                             <div className="branch-atm-tab">
-                                {/* Branch Atm Tab Button */}
-                                {/* <div className="branch-atm-tab__button">
+                                <div className="branch-atm-tab__button">
                                     <ul className="tabs-button-box">
                                         <li 
                                             data-tab="#branch" 
@@ -305,12 +308,10 @@ export default function Home() {
                                             </form>
                                         </div>
                                     </div>
-                                </div> */}
+                                </div>
 
-                                {/* Tabs Content Box */}
-                                {/* <div className="tabs-content-box">
-                                    {/* Tab for Branch */}
-                                    {/* <div className={`tab-content-box-item ${activeBranchTab === '#branch' ? 'tab-content-box-item-active' : ''}`} id="branch">
+                                <div className="tabs-content-box">
+                                    <div className={`tab-content-box-item ${activeBranchTab === '#branch' ? 'tab-content-box-item-active' : ''}`} id="branch">
                                         <div className="branch-atm-tab-content-box-item">
                                             <div className="inner-title">
                                                 <h3>Finbank,<br /> San Francisco</h3>
@@ -331,10 +332,9 @@ export default function Home() {
                                                 </li>
                                             </ul>
                                         </div>
-                                    </div> */}
+                                    </div>
 
-                                    {/* Tab for ATM */}
-                                    {/* <div className={`tab-content-box-item ${activeBranchTab === '#atm' ? 'tab-content-box-item-active' : ''}`} id="atm">
+                                    <div className={`tab-content-box-item ${activeBranchTab === '#atm' ? 'tab-content-box-item-active' : ''}`} id="atm">
                                         <div className="branch-atm-tab-content-box-item">
                                             <div className="inner-title">
                                                 <h3>Alabama, 23/8<br /> West North Central</h3>
@@ -358,7 +358,8 @@ export default function Home() {
                                     </div>
                                 </div>
                             </div>
-                        </div> */}
+                        </div>
+                        */}
                     </section>
                     {/*Google Map End*/}
 
