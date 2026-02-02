@@ -360,7 +360,7 @@ export default function Home() {
                     <section className="customer-care-numbers-area">
                         <div className="container">
                             <div className="title-box">
-                                <h2>Customer Care Numbers</h2>
+                                <h2>Get Support for<br />any Queries or Complaints</h2>
                             </div>
                             <div className="row">
                                 <div className="col-xl-12">
