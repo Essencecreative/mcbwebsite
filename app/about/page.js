@@ -298,7 +298,13 @@ export default function Home() {
                             border: 3px solid #E97927;
                         }
                         .single-statements-box.active .img-box:before {
-                            opacity: 0;
+                            opacity: 0 !important;
+                            display: none !important;
+                        }
+                        .single-statements-box.active .img-box img {
+                            mix-blend-mode: normal !important;
+                            filter: none !important;
+                            opacity: 1 !important;
                         }
                         .statements-text-box .inner-title,
                         .statements-text-box .text {
