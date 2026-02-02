@@ -212,7 +212,7 @@ export default function Home() {
                                     >
                                     <div className="img-box">
                                         <img
-                                        src="/assets/images/resources/statements-2.jpg"
+                                        src="/assets/images/resources/statements-3.jpg"
                                         alt="Core Values"
                                         />
                                         <div className="static-content">
