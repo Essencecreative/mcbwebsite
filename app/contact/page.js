@@ -412,7 +412,37 @@ export default function Home() {
                                                         </div>
 
                                                         <div className="bottom-text text-center">
-                                                            <h3>Get Location, <a href="https://maps.app.goo.gl/RfmM2gzMjYkkkxvL7?g_st=ipc" target="_blank" rel="noopener noreferrer">Click here</a></h3>
+                                                            <a 
+                                                                href="https://maps.app.goo.gl/RfmM2gzMjYkkkxvL7?g_st=ipc" 
+                                                                target="_blank" 
+                                                                rel="noopener noreferrer"
+                                                                className="get-location-btn"
+                                                                style={{
+                                                                    display: 'inline-block',
+                                                                    padding: '15px 40px',
+                                                                    backgroundImage: 'linear-gradient(0deg, #0A3B73 0%, #0E519A 100%)',
+                                                                    color: '#ffffff',
+                                                                    textDecoration: 'none',
+                                                                    borderRadius: '4px',
+                                                                    fontSize: '18px',
+                                                                    fontWeight: '500',
+                                                                    fontFamily: 'var(--thm-font-2)',
+                                                                    transition: 'all 0.3s ease',
+                                                                    boxShadow: '0px 2px 10px rgba(10, 59, 115, 0.3)'
+                                                                }}
+                                                                onMouseEnter={(e) => {
+                                                                    e.target.style.opacity = '0.9';
+                                                                    e.target.style.transform = 'translateY(-2px)';
+                                                                    e.target.style.boxShadow = '0px 4px 15px rgba(10, 59, 115, 0.4)';
+                                                                }}
+                                                                onMouseLeave={(e) => {
+                                                                    e.target.style.opacity = '1';
+                                                                    e.target.style.transform = 'translateY(0)';
+                                                                    e.target.style.boxShadow = '0px 2px 10px rgba(10, 59, 115, 0.3)';
+                                                                }}
+                                                            >
+                                                                Get Location
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </div>
