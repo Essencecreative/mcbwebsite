@@ -178,7 +178,7 @@ export default function Home() {
                                     >
                                     <div className="img-box">
                                         <img
-                                        src="assets/images/resources/statements-1.jpg"
+                                        src="/assets/images/resources/statements-1.jpg"
                                         alt="Mission"
                                         />
                                         <div className="static-content">
@@ -196,7 +196,7 @@ export default function Home() {
                                     >
                                     <div className="img-box">
                                         <img
-                                        src="assets/images/resources/statements-2.jpg"
+                                        src="/assets/images/resources/statements-2.jpg"
                                         alt="Vision"
                                         />
                                         <div className="static-content">
@@ -212,7 +212,7 @@ export default function Home() {
                                     >
                                     <div className="img-box">
                                         <img
-                                        src="assets/images/resources/statements-3.jpg"
+                                        src="/assets/images/resources/statements-2.jpg"
                                         alt="Core Values"
                                         />
                                         <div className="static-content">
@@ -226,11 +226,11 @@ export default function Home() {
                             </div>
                             </div>
                             <div className="col-xl-6">
-                            <div className="statements-text-box" key={activeContent}>
+                            <div className="statements-text-box">
                                 <div className="shape">
                                 <span className="icon-origami" />
                                 </div>
-                                <div className="inner-title">
+                                <div className="inner-title" key={`title-${activeContent}`}>
                                 {activeContent === 'mission' && (
                                     <h2>
                                         OUR MISSION
@@ -247,7 +247,7 @@ export default function Home() {
                                     </h2>
                                 )}
                                 </div>
-                                <div className="text">
+                                <div className="text" key={`text-${activeContent}`}>
                                 {activeContent === 'mission' && (
                                     <p>
                                         "To offer financial services to Tanzanian education ecosystem and related sectors, so as to benefit our society economically and socially."
