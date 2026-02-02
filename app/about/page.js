@@ -15,85 +15,88 @@ export default function Home() {
 
              
                     {/*About One Start*/}
-                    {showOtherSections && <section className="intro-style1-area">
-                        <div className="container">
-                            <div className="row">
-
-                            <div className="col-xl-6">
-                                <div className="intro-style1-video-gallery">
-                                <div className="intro-style1-video-gallery-bg"
-                                    style={{ backgroundImage: 'url(assets/images/resources/intro-style1-video-gallery.jpg)' }}>
-                                </div>
-                                <div className="intro-video-gallery-style1">
-                                    <div className="icon wow zoomIn animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-                                    <a className="video-popup" title="Video Gallery" onClick={() => setIsOpen(true)}>
-                                        <span className="icon-play-button-1"></span>
-                                    </a>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-
-                            <div className="col-xl-6">
-                                <div className="intro-style1-content-box">
-                                <div className="sec-title">
-                                    <h2>Known for Trust,<br /> Honesty & Customer<br /> Support</h2>
-                                </div>
-                                <div className="text">
-                                    <p>Belongs to those who fail in their duty through weakness of will, which is
-                                    the same as saying through shrinking from toil and pain. These cases are
-                                    perfectly simple and easy to distinguish.</p>
-
-                                    <p>Choice is untrammelled and when nothing prevents our being able to do
-                                    what we like best every pleasure is to be welcomed.</p>
-                                </div>
-
+                    {showOtherSections && (
+                        <section className="intro-style1-area">
+                            <div className="container">
                                 <div className="row">
-                                    <div className="col-xl-6 col-lg-6 col-md-6">
-                                    <div className="intro-style1-single-box">
-                                        <div className="img-box">
-                                        <div className="img-box-inner">
-                                            <img src="assets/images/resources/intro-style1-1.jpg" alt="Our Journey" />
-                                        </div>
-                                        <div className="overlay-text">
-                                            <h3>Our Journey</h3>
-                                        </div>
-                                        </div>
-                                        <div className="title-box">
-                                        <h3><a href="#">For Over Four Decades Our Bank</a></h3>
-                                        </div>
-                                    </div>
-                                    </div>
 
-                                    <div className="col-xl-6 col-lg-6 col-md-6">
-                                    <div className="intro-style1-single-box">
-                                        <div className="img-box">
-                                        <div className="img-box-inner">
-                                            <img src="assets/images/resources/intro-style1-2.jpg" alt="Our Team" />
-                                        </div>
-                                        <div className="overlay-text">
-                                            <h3>Our Team</h3>
-                                        </div>
-                                        </div>
-                                        <div className="title-box">
-                                        <h3><a href="#">Passion & Professional Management</a></h3>
+                                <div className="col-xl-6">
+                                    <div className="intro-style1-video-gallery">
+                                    <div className="intro-style1-video-gallery-bg"
+                                        style={{ backgroundImage: 'url(assets/images/resources/intro-style1-video-gallery.jpg)' }}>
+                                    </div>
+                                    <div className="intro-video-gallery-style1">
+                                        <div className="icon wow zoomIn animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                                        <a className="video-popup" title="Video Gallery" onClick={() => setIsOpen(true)}>
+                                            <span className="icon-play-button-1"></span>
+                                        </a>
                                         </div>
                                     </div>
                                     </div>
                                 </div>
 
+                                <div className="col-xl-6">
+                                    <div className="intro-style1-content-box">
+                                    <div className="sec-title">
+                                        <h2>Known for Trust,<br /> Honesty & Customer<br /> Support</h2>
+                                    </div>
+                                    <div className="text">
+                                        <p>Belongs to those who fail in their duty through weakness of will, which is
+                                        the same as saying through shrinking from toil and pain. These cases are
+                                        perfectly simple and easy to distinguish.</p>
+
+                                        <p>Choice is untrammelled and when nothing prevents our being able to do
+                                        what we like best every pleasure is to be welcomed.</p>
+                                    </div>
+
+                                    <div className="row">
+                                        <div className="col-xl-6 col-lg-6 col-md-6">
+                                        <div className="intro-style1-single-box">
+                                            <div className="img-box">
+                                            <div className="img-box-inner">
+                                                <img src="assets/images/resources/intro-style1-1.jpg" alt="Our Journey" />
+                                            </div>
+                                            <div className="overlay-text">
+                                                <h3>Our Journey</h3>
+                                            </div>
+                                            </div>
+                                            <div className="title-box">
+                                            <h3><a href="#">For Over Four Decades Our Bank</a></h3>
+                                            </div>
+                                        </div>
+                                        </div>
+
+                                        <div className="col-xl-6 col-lg-6 col-md-6">
+                                        <div className="intro-style1-single-box">
+                                            <div className="img-box">
+                                            <div className="img-box-inner">
+                                                <img src="assets/images/resources/intro-style1-2.jpg" alt="Our Team" />
+                                            </div>
+                                            <div className="overlay-text">
+                                                <h3>Our Team</h3>
+                                            </div>
+                                            </div>
+                                            <div className="title-box">
+                                            <h3><a href="#">Passion & Professional Management</a></h3>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                    </div>
+                                </div>
+
                                 </div>
                             </div>
-
-                            </div>
-                        </div>
-                        {/* Modal Video */}
-                        {showOtherSections && <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="06dV9txztKY" onClose={() => setIsOpen(false)} />}
-                        </section>}
+                            {/* Modal Video */}
+                            <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="06dV9txztKY" onClose={() => setIsOpen(false)} />
+                        </section>
+                    )}
                     {/*About One End*/}
 
                     {/*Start Choose Style1 Area*/}
-                    {showOtherSections && <section className="choose-style1-area">
+                    {showOtherSections && (
+                        <section className="choose-style1-area">
                         <div className="container">
                         <ul className="row choose-style1__content">
                             {/*Start Single Choose Style1*/}
@@ -155,7 +158,8 @@ export default function Home() {
                             {/*End Single Choose Style1*/}
                         </ul>
                         </div>
-                    </section>}
+                    </section>
+                    )}
                     {/*End Choose Style1 Area*/}
 
                     {/*Start Statements Area*/}
@@ -241,7 +245,8 @@ export default function Home() {
                     {/*End Statements Area*/}
 
                     {/*Start Facts Area*/}
-                    {showOtherSections && <section className="facts-area">
+                    {showOtherSections && (
+                        <section className="facts-area">
                         <div
                         className="facts-area-bg"
                         style={{
@@ -349,12 +354,14 @@ export default function Home() {
                             {/*End Single Fact Box*/}
                         </div>
                         </div>
-                    </section>}
+                    </section>
+                    )}
                     {/*End Facts Area*/}
 
 
                     {/*Start Statistics Area*/}
-                    {showOtherSections && <section className="statistics-area">
+                    {showOtherSections && (
+                        <section className="statistics-area">
                         <div className="container">
                         <div className="row">
                             <div className="col-xl-6">
@@ -392,15 +399,17 @@ export default function Home() {
                             </div>
                         </div>
                         </div>
-                    </section>}
+                    </section>
+                    )}
                     {/*End Statistics Area*/}
 
 
                     {/*Start Awards Achivements Area*/}
-                    {showOtherSections && <section
-                        className="awards-achivements-area"
-                        style={{ backgroundColor: "#f7f1eb" }}
-                    >
+                    {showOtherSections && (
+                        <section
+                            className="awards-achivements-area"
+                            style={{ backgroundColor: "#f7f1eb" }}
+                        >
                         <div className="container">
                         <div className="sec-title text-center">
                             <h2>Awards &amp; Major Achivements</h2>
@@ -533,7 +542,8 @@ export default function Home() {
                             </div>
                         </div>
                         </div>
-                    </section>}
+                    </section>
+                    )}
                     {/*End Awards Achivements Area*/}
                 </div>
             </Layout>
