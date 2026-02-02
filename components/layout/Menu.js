@@ -139,7 +139,7 @@ export default function Menu() {
                     <Link href="#">About</Link>
                     <ul>
                         <li><Link href="/history" style={{ cursor: 'pointer', pointerEvents: 'auto' }}>History</Link></li>
-                        <li><Link href="/team" style={{ cursor: 'pointer', pointerEvents: 'auto' }}>Mission, Vision & Values</Link></li>
+                        <li><Link href="/about" style={{ cursor: 'pointer', pointerEvents: 'auto' }}>Mission, Vision & Values</Link></li>
                         <li><Link href="/board-of-directors">Board of Directors</Link></li>
                         <li><Link href="/team">Management</Link></li>
                         <li><Link href="/faq">FAQ</Link></li>
