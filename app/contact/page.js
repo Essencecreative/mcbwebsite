@@ -394,7 +394,7 @@ export default function Home() {
                                                                 <tbody>
                                                                     <tr>
                                                                         <td className="inner-title">
-                                                                            <h3>Mlimani Tower, Samnujoma Road, Dar es Salaam, Tanzania</h3>
+                                                                            <h3>Mlimani Tower, Samnujoma Road,<br />Dar es Salaam, Tanzania</h3>
                                                                         </td>
                                                                         <td className="contact-info">
                                                                             <ul>
