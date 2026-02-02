@@ -272,10 +272,10 @@ export default function Home() {
                         className="google-map__one" 
                         allowFullScreen
                     ></iframe>
-                        <div className="google-map-content-box">
+                        {/* <div className="google-map-content-box">
                             <div className="branch-atm-tab">
                                 {/* Branch Atm Tab Button */}
-                                <div className="branch-atm-tab__button">
+                                {/* <div className="branch-atm-tab__button">
                                     <ul className="tabs-button-box">
                                         <li 
                                             data-tab="#branch" 
@@ -305,12 +305,12 @@ export default function Home() {
                                             </form>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
 
                                 {/* Tabs Content Box */}
-                                <div className="tabs-content-box">
+                                {/* <div className="tabs-content-box">
                                     {/* Tab for Branch */}
-                                    <div className={`tab-content-box-item ${activeBranchTab === '#branch' ? 'tab-content-box-item-active' : ''}`} id="branch">
+                                    {/* <div className={`tab-content-box-item ${activeBranchTab === '#branch' ? 'tab-content-box-item-active' : ''}`} id="branch">
                                         <div className="branch-atm-tab-content-box-item">
                                             <div className="inner-title">
                                                 <h3>Finbank,<br /> San Francisco</h3>
@@ -331,10 +331,10 @@ export default function Home() {
                                                 </li>
                                             </ul>
                                         </div>
-                                    </div>
+                                    </div> */}
 
                                     {/* Tab for ATM */}
-                                    <div className={`tab-content-box-item ${activeBranchTab === '#atm' ? 'tab-content-box-item-active' : ''}`} id="atm">
+                                    {/* <div className={`tab-content-box-item ${activeBranchTab === '#atm' ? 'tab-content-box-item-active' : ''}`} id="atm">
                                         <div className="branch-atm-tab-content-box-item">
                                             <div className="inner-title">
                                                 <h3>Alabama, 23/8<br /> West North Central</h3>
@@ -358,7 +358,7 @@ export default function Home() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </section>
                     {/*Google Map End*/}
 
