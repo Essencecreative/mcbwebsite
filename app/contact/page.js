@@ -467,11 +467,14 @@ export default function Home() {
                             font-weight: 700 !important;
                             font-style: normal !important;
                         }
-                        .customer-care-numbers-tab__button .tabs-button-box .tab-btn-item.active-btn-item {
+                        .customer-care-numbers-area .customer-care-numbers-tab__button .tabs-button-box .tab-btn-item.active-btn-item {
                             background-image: linear-gradient(0deg, #0A3B73 0%, #0E519A 100%) !important;
                             color: #ffffff !important;
                         }
-                        .customer-care-numbers-tab__button .tabs-button-box .tab-btn-item.active-btn-item h4 {
+                        .customer-care-numbers-area .customer-care-numbers-tab__button .tabs-button-box .tab-btn-item.active-btn-item::before {
+                            display: none !important;
+                        }
+                        .customer-care-numbers-area .customer-care-numbers-tab__button .tabs-button-box .tab-btn-item.active-btn-item h4 {
                             color: #ffffff !important;
                         }
                     `}</style>
