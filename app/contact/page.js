@@ -425,13 +425,17 @@ export default function Home() {
                     </section>
                     {/*CTA One End*/}
 
-                    {/* Remove border between table rows */}
+                    {/* Remove border between table rows and make location bold */}
                     <style jsx>{`
                         .customer-care-numbers-table tbody tr {
                             border-bottom: none !important;
                         }
                         .customer-care-numbers-table tbody tr:last-child {
                             border-bottom: none !important;
+                        }
+                        .customer-care-numbers-table tbody tr td.inner-title h3 {
+                            font-weight: 700 !important;
+                            font-style: normal !important;
                         }
                     `}</style>
 
