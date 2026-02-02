@@ -263,13 +263,13 @@ export default function Home() {
                                         <p style={{ marginBottom: '20px' }}>
                                             Core values are the ideals and enduring principles that underpin the institution's performance and culture MCB shall embrace the following core values in order to effectively and efficiently deliver to our customers:
                                         </p>
-                                        <ol style={{ paddingLeft: '20px', marginTop: '15px' }}>
-                                            <li style={{ marginBottom: '12px' }}><strong>Customer Focus:</strong> Everything we do should add value to the customer.</li>
-                                            <li style={{ marginBottom: '12px' }}><strong>Innovation:</strong> We are innovative in our approach</li>
-                                            <li style={{ marginBottom: '12px' }}><strong>Efficiency:</strong> Provide services in cost effective and timely manner.</li>
-                                            <li style={{ marginBottom: '12px' }}><strong>Team work:</strong> Our approach is collaborative</li>
-                                            <li style={{ marginBottom: '12px' }}><strong>Integrity:</strong> We observe high levels of integrity in all our actions.</li>
-                                        </ol>
+                                        <ul style={{ paddingLeft: '20px', marginTop: '15px', listStyleType: 'disc', color: '#ffffff' }}>
+                                            <li style={{ marginBottom: '12px', color: '#ffffff' }}><strong style={{ color: '#ffffff' }}>Customer Focus:</strong> Everything we do should add value to the customer.</li>
+                                            <li style={{ marginBottom: '12px', color: '#ffffff' }}><strong style={{ color: '#ffffff' }}>Innovation:</strong> We are innovative in our approach</li>
+                                            <li style={{ marginBottom: '12px', color: '#ffffff' }}><strong style={{ color: '#ffffff' }}>Efficiency:</strong> Provide services in cost effective and timely manner.</li>
+                                            <li style={{ marginBottom: '12px', color: '#ffffff' }}><strong style={{ color: '#ffffff' }}>Team work:</strong> Our approach is collaborative</li>
+                                            <li style={{ marginBottom: '12px', color: '#ffffff' }}><strong style={{ color: '#ffffff' }}>Integrity:</strong> We observe high levels of integrity in all our actions.</li>
+                                        </ul>
                                     </div>
                                 )}
                                 </div>
@@ -301,6 +301,15 @@ export default function Home() {
                         .statements-text-box .inner-title,
                         .statements-text-box .text {
                             animation: fadeIn 0.5s ease-in-out;
+                        }
+                        .statements-text-box .text ul {
+                            color: #ffffff !important;
+                        }
+                        .statements-text-box .text ul li {
+                            color: #ffffff !important;
+                        }
+                        .statements-text-box .text ul li strong {
+                            color: #ffffff !important;
                         }
                         @keyframes fadeIn {
                             from {
