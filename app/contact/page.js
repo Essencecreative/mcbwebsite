@@ -6,7 +6,7 @@ import { submitContactForm } from "@/utils/api";
 
 export default function Home() {
     const [activeBranchTab, setActiveBranchTab] = useState('#branch');
-    const [activeCustomerTab, setActiveCustomerTab] = useState('#personal-banking');
+    const [activeCustomerTab, setActiveCustomerTab] = useState('#mcb-hq');
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -373,81 +373,19 @@ export default function Home() {
                                         <div className="customer-care-numbers-tab__button">
                                             <ul className="tabs-button-box clearfix">
                                                 <li 
-                                                    data-tab="#personal-banking" 
-                                                    className={`tab-btn-item ${activeCustomerTab === '#personal-banking' ? 'active-btn-item' : ''}`} 
-                                                    onClick={() => handleCustomerTabClick('#personal-banking')}
+                                                    data-tab="#mcb-hq" 
+                                                    className={`tab-btn-item ${activeCustomerTab === '#mcb-hq' ? 'active-btn-item' : ''}`} 
+                                                    onClick={() => handleCustomerTabClick('#mcb-hq')}
                                                 >
-                                                    <h4>Personal Banking</h4>
-                                                </li>
-                                                <li 
-                                                    data-tab="#corporate-banking" 
-                                                    className={`tab-btn-item ${activeCustomerTab === '#corporate-banking' ? 'active-btn-item' : ''}`} 
-                                                    onClick={() => handleCustomerTabClick('#corporate-banking')}
-                                                >
-                                                    <h4>Corporate Banking</h4>
+                                                    <h4>MCB HQ</h4>
                                                 </li>
                                             </ul>
                                         </div>
 
                                         {/* Tabs Content Box */}
                                         <div className="tabs-content-box">
-                                            {/* Tab for Personal Banking */}
-                                            <div className={`tab-content-box-item ${activeCustomerTab === '#personal-banking' ? 'tab-content-box-item-active' : ''}`} id="personal-banking">
-                                                <div className="customer-care-numbers-tab-content-box-item">
-                                                    <div className="customer-care-numbers-table-box">
-                                                        <div className="table-outer">
-                                                            <table className="customer-care-numbers-table">
-                                                                <thead className="header">
-                                                                    <tr>
-                                                                        <th>Service</th>
-                                                                        <th>Contact Details</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td className="inner-title">
-                                                                            <h3>General Query/Complaint</h3>
-                                                                        </td>
-                                                                        <td className="contact-info">
-                                                                            <ul>
-                                                                                <li>
-                                                                                    <a href="tel:2512353256">+844 123 4567 89</a>
-                                                                                    <span>(Toll Free)</span>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a className="color2" href="mailto:yourmail@email.com">customercare@finbank.com</a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td className="inner-title">
-                                                                            <h3>Credit Card</h3>
-                                                                        </td>
-                                                                        <td className="contact-info">
-                                                                            <ul>
-                                                                                <li>
-                                                                                    <a href="tel:2512353256">+844 789 0123 45</a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a className="color2" href="mailto:yourmail@email.com">creditcard@finbank.com</a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-
-                                                        <div className="bottom-text text-center">
-                                                            <h3>To submit your complaint, <a href="#">Click here</a></h3>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            {/* Tab for Corporate Banking */}
-                                            <div className={`tab-content-box-item ${activeCustomerTab === '#corporate-banking' ? 'tab-content-box-item-active' : ''}`} id="corporate-banking">
+                                            {/* Tab for MCB HQ */}
+                                            <div className={`tab-content-box-item ${activeCustomerTab === '#mcb-hq' ? 'tab-content-box-item-active' : ''}`} id="mcb-hq">
                                                 <div className="customer-care-numbers-tab-content-box-item">
                                                     <div className="customer-care-numbers-table-box">
                                                         <div className="table-outer">
