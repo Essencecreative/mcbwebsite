@@ -296,7 +296,9 @@ export default function Home() {
                         }
                         .single-statements-box.active .img-box {
                             border: 3px solid #E97927;
-                            box-shadow: 0 4px 15px rgba(233, 121, 39, 0.3);
+                        }
+                        .single-statements-box.active .img-box:before {
+                            opacity: 0;
                         }
                         .statements-text-box .inner-title,
                         .statements-text-box .text {
