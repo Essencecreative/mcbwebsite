@@ -14,7 +14,7 @@ export default function Home() {
 
              
                     {/*About One Start*/}
-                    <section className="intro-style1-area">
+                    {/* <section className="intro-style1-area">
                         <div className="container">
                             <div className="row">
 
@@ -89,11 +89,11 @@ export default function Home() {
 
                         {/* Modal Video */}
                         <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="06dV9txztKY" onClose={() => setIsOpen(false)} />
-                        </section>
+                        </section> */}
                     {/*About One End*/}
 
                     {/*Start Choose Style1 Area*/}
-                    <section className="choose-style1-area">
+                    {/* <section className="choose-style1-area">
                         <div className="container">
                         <ul className="row choose-style1__content">
                             {/*Start Single Choose Style1*/}
@@ -155,14 +155,14 @@ export default function Home() {
                             {/*End Single Choose Style1*/}
                         </ul>
                         </div>
-                    </section>
+                    </section> */}
                     {/*End Choose Style1 Area*/}
 
                     {/*Start Statements Area*/}
                     <section className="statements-area">
                         <div className="container">
                         <div className="row">
-                            <div className="col-xl-6">
+                            {/* <div className="col-xl-6">
                             <div className="statements-content-box">
                                 <ul>
                                 <li>
@@ -207,8 +207,8 @@ export default function Home() {
                                 </li>
                                 </ul>
                             </div>
-                            </div>
-                            <div className="col-xl-6">
+                            </div> */}
+                            <div className="col-xl-12">
                             <div className="statements-text-box">
                                 <div className="shape">
                                 <span className="icon-origami" />
@@ -241,7 +241,7 @@ export default function Home() {
                     {/*End Statements Area*/}
 
                     {/*Start Facts Area*/}
-                    <section className="facts-area">
+                    {/* <section className="facts-area">
                         <div
                         className="facts-area-bg"
                         style={{
@@ -349,12 +349,12 @@ export default function Home() {
                             {/*End Single Fact Box*/}
                         </div>
                         </div>
-                    </section>
+                    </section> */}
                     {/*End Facts Area*/}
 
 
                     {/*Start Statistics Area*/}
-                    <section className="statistics-area">
+                    {/* <section className="statistics-area">
                         <div className="container">
                         <div className="row">
                             <div className="col-xl-6">
@@ -392,12 +392,12 @@ export default function Home() {
                             </div>
                         </div>
                         </div>
-                    </section>
+                    </section> */}
                     {/*End Statistics Area*/}
 
 
                     {/*Start Awards Achivements Area*/}
-                    <section
+                    {/* <section
                         className="awards-achivements-area"
                         style={{ backgroundColor: "#f7f1eb" }}
                     >
@@ -533,7 +533,7 @@ export default function Home() {
                             </div>
                         </div>
                         </div>
-                    </section>
+                    </section> */}
                     {/*End Awards Achivements Area*/}
                 </div>
             </Layout>
