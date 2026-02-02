@@ -412,7 +412,7 @@ export default function Home() {
                                                         </div>
 
                                                         <div className="bottom-text text-center">
-                                                            <h3>To submit your complaint, <a href="#">Click here</a></h3>
+                                                            <h3>Get Location, <a href="https://maps.app.goo.gl/RfmM2gzMjYkkkxvL7?g_st=ipc" target="_blank" rel="noopener noreferrer">Click here</a></h3>
                                                         </div>
                                                     </div>
                                                 </div>
