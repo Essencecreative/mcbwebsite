@@ -162,7 +162,7 @@ export default function Home() {
                     <section className="statements-area">
                         <div className="container">
                         <div className="row">
-                            {/* <div className="col-xl-6">
+                            <div className="col-xl-6">
                             <div className="statements-content-box">
                                 <ul>
                                 <li>
@@ -207,8 +207,8 @@ export default function Home() {
                                 </li>
                                 </ul>
                             </div>
-                            </div> */}
-                            <div className="col-xl-12">
+                            </div>
+                            <div className="col-xl-6">
                             <div className="statements-text-box">
                                 <div className="shape">
                                 <span className="icon-origami" />
