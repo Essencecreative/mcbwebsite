@@ -169,14 +169,14 @@ export default function Menu() {
             </ul>
             <style jsx>{`
                 .main-menu__list li ul li a[href="/history"],
-                .main-menu__list li ul li a[href="/team"] {
+                .main-menu__list li ul li a[href="/about"] {
                     cursor: pointer !important;
                     pointer-events: auto !important;
                     text-decoration: none !important;
                     color: inherit !important;
                 }
                 .main-menu__list li ul li a[href="/history"]:hover,
-                .main-menu__list li ul li a[href="/team"]:hover {
+                .main-menu__list li ul li a[href="/about"]:hover {
                     color: var(--thm-base) !important;
                 }
             `}</style>
