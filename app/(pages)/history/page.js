@@ -96,7 +96,7 @@ export default function History() {
 
 
                     {/*Start Facts Area*/}
-                    <section className="facts-area">
+                    {/* <section className="facts-area">
                         <div
                         className="facts-area-bg"
                        
@@ -110,7 +110,7 @@ export default function History() {
                         </div>
                         <div className="row">
                             {/*Start Single Fact Box*/}
-                            <div className="col-xl-3 col-lg-6 col-md-6">
+                            {/* <div className="col-xl-3 col-lg-6 col-md-6">
                             <div className="single-fact-box">
                                 <div className="icon">
                                 <span className="icon-bank">
@@ -137,10 +137,10 @@ export default function History() {
                                 <p>86 Branches around the country</p>
                                 </div>
                             </div>
-                            </div>
+                            </div> */}
                             {/*End Single Fact Box*/}
                             {/*Start Single Fact Box*/}
-                            <div className="col-xl-3 col-lg-6 col-md-6">
+                            {/* <div className="col-xl-3 col-lg-6 col-md-6">
                             <div className="single-fact-box">
                                 <div className="icon">
                                 <span className="icon-expert">
@@ -153,10 +153,10 @@ export default function History() {
                                 <p>More than 1.5 illion customers</p>
                                 </div>
                             </div>
-                            </div>
+                            </div> */}
                             {/*End Single Fact Box*/}
                             {/*Start Single Fact Box*/}
-                            <div className="col-xl-3 col-lg-6 col-md-6">
+                            {/* <div className="col-xl-3 col-lg-6 col-md-6">
                             <div className="single-fact-box">
                                 <div className="icon">
                                 <span className="icon-human">
@@ -182,10 +182,10 @@ export default function History() {
                                 <p>1.6k professional employees</p>
                                 </div>
                             </div>
-                            </div>
+                            </div> */}
                             {/*End Single Fact Box*/}
                             {/*Start Single Fact Box*/}
-                            <div className="col-xl-3 col-lg-6 col-md-6">
+                            {/* <div className="col-xl-3 col-lg-6 col-md-6">
                             <div className="single-fact-box">
                                 <div className="icon">
                                 <span className="icon-money-bag">
@@ -198,16 +198,16 @@ export default function History() {
                                 <p>45.6 Cr loans for 258 customers</p>
                                 </div>
                             </div>
-                            </div>
+                            </div> */}
                             {/*End Single Fact Box*/}
+                        {/* </div>
                         </div>
-                        </div>
-                    </section>
+                    </section> */}
                     {/*End Facts Area*/}
 
 
                     {/*Start Statistics Area*/}
-                    <section className="statistics-area">
+                    {/* <section className="statistics-area">
                         <div className="container">
                         <div className="row">
                             <div className="col-xl-6">
@@ -245,7 +245,7 @@ export default function History() {
                             </div>
                         </div>
                         </div>
-                    </section>
+                    </section> */}
                     {/*End Statistics Area*/}
 
 
