@@ -7,6 +7,7 @@ import Layout from "@/components/layout/Layout"
 export default function Home() {
     const [isOpen, setIsOpen] = useState(false);
     const showOtherSections = false; // Set to true to show other sections
+    const [activeContent, setActiveContent] = useState('mission'); // 'mission', 'vision', or 'coreValues'
 
     return (
         <>
@@ -170,11 +171,15 @@ export default function Home() {
                             <div className="statements-content-box">
                                 <ul>
                                 <li>
-                                    <div className="single-statements-box">
+                                    <div 
+                                        className={`single-statements-box ${activeContent === 'mission' ? 'active' : ''}`}
+                                        onClick={() => setActiveContent('mission')}
+                                        style={{ cursor: 'pointer' }}
+                                    >
                                     <div className="img-box">
                                         <img
                                         src="assets/images/resources/statements-1.jpg"
-                                        alt=""
+                                        alt="Mission"
                                         />
                                         <div className="static-content">
                                         <h2>Mission</h2>
@@ -184,11 +189,15 @@ export default function Home() {
                                     </div>
                                 </li>
                                 <li>
-                                    <div className="single-statements-box">
+                                    <div 
+                                        className={`single-statements-box ${activeContent === 'vision' ? 'active' : ''}`}
+                                        onClick={() => setActiveContent('vision')}
+                                        style={{ cursor: 'pointer' }}
+                                    >
                                     <div className="img-box">
                                         <img
                                         src="assets/images/resources/statements-2.jpg"
-                                        alt=""
+                                        alt="Vision"
                                         />
                                         <div className="static-content">
                                         <h2>Vision</h2>
@@ -196,11 +205,15 @@ export default function Home() {
                                         <div className="overlay-content">v</div>
                                     </div>
                                     </div>
-                                    <div className="single-statements-box">
+                                    <div 
+                                        className={`single-statements-box ${activeContent === 'coreValues' ? 'active' : ''}`}
+                                        onClick={() => setActiveContent('coreValues')}
+                                        style={{ cursor: 'pointer' }}
+                                    >
                                     <div className="img-box">
                                         <img
                                         src="assets/images/resources/statements-3.jpg"
-                                        alt=""
+                                        alt="Core Values"
                                         />
                                         <div className="static-content">
                                         <h2>Core Value</h2>
@@ -213,29 +226,52 @@ export default function Home() {
                             </div>
                             </div>
                             <div className="col-xl-6">
-                            <div className="statements-text-box">
+                            <div className="statements-text-box" key={activeContent}>
                                 <div className="shape">
                                 <span className="icon-origami" />
                                 </div>
                                 <div className="inner-title">
-                                <h2>
-                                    A Great
-                                    <br /> Mission Statement
-                                </h2>
+                                {activeContent === 'mission' && (
+                                    <h2>
+                                        OUR MISSION
+                                    </h2>
+                                )}
+                                {activeContent === 'vision' && (
+                                    <h2>
+                                        OUR VISION
+                                    </h2>
+                                )}
+                                {activeContent === 'coreValues' && (
+                                    <h2>
+                                        OUR CORE VALUES
+                                    </h2>
+                                )}
                                 </div>
                                 <div className="text">
-                                <p>
-                                    Obligations of business it will frequently occur that pleasures
-                                    have to be repudiated and annoyances accepted. The wise man
-                                    always holds these matters to this principle of selection
-                                    rejects pleasures to secure other greater pleasures.
-                                </p>
-                                <div className="btn-box">
-                                    <Link href="/blog-single">
-                                    <span className="icon-right-arrow" />
-                                    Read More
-                                    </Link>
-                                </div>
+                                {activeContent === 'mission' && (
+                                    <p>
+                                        "To offer financial services to Tanzanian education ecosystem and related sectors, so as to benefit our society economically and socially."
+                                    </p>
+                                )}
+                                {activeContent === 'vision' && (
+                                    <p>
+                                        "To be a preferred financial solution provider in Tanzania"
+                                    </p>
+                                )}
+                                {activeContent === 'coreValues' && (
+                                    <div>
+                                        <p style={{ marginBottom: '20px' }}>
+                                            Core values are the ideals and enduring principles that underpin the institution's performance and culture MCB shall embrace the following core values in order to effectively and efficiently deliver to our customers:
+                                        </p>
+                                        <ol style={{ paddingLeft: '20px', marginTop: '15px' }}>
+                                            <li style={{ marginBottom: '12px' }}><strong>Customer Focus:</strong> Everything we do should add value to the customer.</li>
+                                            <li style={{ marginBottom: '12px' }}><strong>Innovation:</strong> We are innovative in our approach</li>
+                                            <li style={{ marginBottom: '12px' }}><strong>Efficiency:</strong> Provide services in cost effective and timely manner.</li>
+                                            <li style={{ marginBottom: '12px' }}><strong>Team work:</strong> Our approach is collaborative</li>
+                                            <li style={{ marginBottom: '12px' }}><strong>Integrity:</strong> We observe high levels of integrity in all our actions.</li>
+                                        </ol>
+                                    </div>
+                                )}
                                 </div>
                             </div>
                             </div>
@@ -243,6 +279,40 @@ export default function Home() {
                         </div>
                     </section>
                     {/*End Statements Area*/}
+
+                    {/* Styles for transitions */}
+                    <style jsx>{`
+                        .statements-text-box {
+                            transition: opacity 0.3s ease-in-out;
+                        }
+                        .single-statements-box {
+                            transition: transform 0.3s ease, opacity 0.3s ease;
+                        }
+                        .single-statements-box:hover {
+                            transform: scale(1.05);
+                        }
+                        .single-statements-box.active {
+                            opacity: 1;
+                        }
+                        .single-statements-box.active .img-box {
+                            border: 3px solid #E97927;
+                            box-shadow: 0 4px 15px rgba(233, 121, 39, 0.3);
+                        }
+                        .statements-text-box .inner-title,
+                        .statements-text-box .text {
+                            animation: fadeIn 0.5s ease-in-out;
+                        }
+                        @keyframes fadeIn {
+                            from {
+                                opacity: 0;
+                                transform: translateY(10px);
+                            }
+                            to {
+                                opacity: 1;
+                                transform: translateY(0);
+                            }
+                        }
+                    `}</style>
 
                     {/*Start Facts Area*/}
                     {showOtherSections && (
