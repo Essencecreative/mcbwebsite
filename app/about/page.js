@@ -230,36 +230,36 @@ export default function Home() {
                                 <div className="shape">
                                 <span className="icon-origami" />
                                 </div>
-                                <div className="inner-title" key={`title-${activeContent}`}>
+                                <div className="inner-title">
                                 {activeContent === 'mission' && (
-                                    <h2>
+                                    <h2 key="mission-title">
                                         OUR MISSION
                                     </h2>
                                 )}
                                 {activeContent === 'vision' && (
-                                    <h2>
+                                    <h2 key="vision-title">
                                         OUR VISION
                                     </h2>
                                 )}
                                 {activeContent === 'coreValues' && (
-                                    <h2>
+                                    <h2 key="corevalues-title">
                                         OUR CORE VALUES
                                     </h2>
                                 )}
                                 </div>
-                                <div className="text" key={`text-${activeContent}`}>
+                                <div className="text">
                                 {activeContent === 'mission' && (
-                                    <p>
+                                    <p key="mission-text">
                                         To offer financial services to Tanzanian education ecosystem and related sectors, so as to benefit our society economically and socially.
                                     </p>
                                 )}
                                 {activeContent === 'vision' && (
-                                    <p>
+                                    <p key="vision-text">
                                         To be a preferred financial solution provider in Tanzania
                                     </p>
                                 )}
                                 {activeContent === 'coreValues' && (
-                                    <div>
+                                    <div key="corevalues-text">
                                         <p style={{ marginBottom: '20px' }}>
                                             Core values are the ideals and enduring principles that underpin the institution's performance and culture MCB shall embrace the following core values in order to effectively and efficiently deliver to our customers:
                                         </p>
