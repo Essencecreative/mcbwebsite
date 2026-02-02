@@ -408,21 +408,6 @@ export default function Home() {
                                                                             </ul>
                                                                         </td>
                                                                     </tr>
-                                                                    <tr>
-                                                                        <td className="inner-title">
-                                                                            <h3>Credit Card</h3>
-                                                                        </td>
-                                                                        <td className="contact-info">
-                                                                            <ul>
-                                                                                <li>
-                                                                                    <a href="tel:2512353256">+844 789 0123 45</a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a className="color2" href="mailto:yourmail@email.com">creditcard@finbank.com</a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </td>
-                                                                    </tr>
                                                                 </tbody>
                                                             </table>
                                                         </div>
