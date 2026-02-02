@@ -446,6 +446,16 @@ export default function Home() {
                     </section>
                     {/*CTA One End*/}
 
+                    {/* Remove border between table rows */}
+                    <style jsx>{`
+                        .customer-care-numbers-table tbody tr {
+                            border-bottom: none !important;
+                        }
+                        .customer-care-numbers-table tbody tr:last-child {
+                            border-bottom: none !important;
+                        }
+                    `}</style>
+
                 </div>
 
             </Layout>
