@@ -227,9 +227,9 @@ export default function Home() {
                             </div>
                             <div className="col-xl-6">
                             <div className="statements-text-box">
-                                <div className="shape">
+                                {/* <div className="shape">
                                 <span className="icon-origami" />
-                                </div>
+                                </div> */}
                                 <div className="inner-title">
                                 {activeContent === 'mission' && (
                                     <h2 key="mission-title">
@@ -284,6 +284,9 @@ export default function Home() {
                     <style jsx>{`
                         .statements-text-box {
                             transition: opacity 0.3s ease-in-out;
+                        }
+                        .statements-text-box .shape {
+                            display: none !important;
                         }
                         .single-statements-box {
                             transition: transform 0.3s ease, opacity 0.3s ease;
