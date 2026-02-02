@@ -315,9 +315,13 @@ export default function Home() {
                         }
                         .statements-text-box .text ul {
                             color: #ffffff !important;
+                            list-style-type: disc !important;
+                            padding-left: 20px !important;
                         }
                         .statements-text-box .text ul li {
                             color: #ffffff !important;
+                            list-style-type: disc !important;
+                            display: list-item !important;
                         }
                         .statements-text-box .text ul li strong {
                             color: #ffffff !important;
