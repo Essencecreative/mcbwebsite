@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { submitContactForm } from "@/utils/api";
 
 export default function Home() {
-    const [activeBranchTab, setActiveBranchTab] = useState('#branch');
     const [activeCustomerTab, setActiveCustomerTab] = useState('#mcb-hq');
     const [formData, setFormData] = useState({
         name: '',
@@ -16,10 +15,6 @@ export default function Home() {
     });
     const [submitting, setSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
-
-    const handleBranchTabClick = (tab) => {
-        setActiveBranchTab(tab);
-    };
 
     const handleCustomerTabClick = (tab) => {
         setActiveCustomerTab(tab);
