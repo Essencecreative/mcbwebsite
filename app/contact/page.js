@@ -82,12 +82,12 @@ export default function Home() {
                 <div>
 
                     {/*Contact Two Start*/}
-                    <section className="main-contact-form-area">
+                    {/* <section className="main-contact-form-area">
                         <div className="container">
                             <div className="row">
 
                             {/* Contact Info Section */}
-                            <div className="col-xl-6">
+                            {/* <div className="col-xl-6">
                                 <div className="contact-info-box-style1">
                                 <div className="box1"></div>
                                 <div className="title">
@@ -144,10 +144,10 @@ export default function Home() {
                                 </div>
 
                                 </div>
-                            </div>
+                            </div> */}
 
                             {/* Contact Form Section */}
-                            <div className="col-xl-6">
+                            {/* <div className="col-xl-6">
                                 <div className="contact-form">
                                 <form id="contact-form" name="contact_form" className="default-form2" onSubmit={handleSubmit}>
 
@@ -257,11 +257,11 @@ export default function Home() {
 
                                 </form>
                                 </div>
-                            </div>
+                            </div> */}
 
-                            </div>
+                            {/* </div>
                         </div>
-                    </section>
+                    </section> */}
                     {/*Contact Two End*/}
                    
                     {/*Google Map Start*/}
