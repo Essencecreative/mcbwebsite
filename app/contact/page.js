@@ -363,7 +363,7 @@ export default function Home() {
                                 <h2>Customer Care Numbers</h2>
                             </div>
                             <div className="row">
-                                <div className="col-xl-8">
+                                <div className="col-xl-12">
                                     <div className="customer-care-numbers-tab">
                                         <div className="customer-care-numbers-tab__button">
                                             <ul className="tabs-button-box clearfix">
@@ -399,11 +399,10 @@ export default function Home() {
                                                                         <td className="contact-info">
                                                                             <ul>
                                                                                 <li>
-                                                                                    <a href="tel:2512353256">+844 123 4567 89</a>
-                                                                                    <span>(Toll Free)</span>
+                                                                                    <strong>Phone Number:</strong> <a href="tel:0222775131">022 277 5131</a>
                                                                                 </li>
                                                                                 <li>
-                                                                                    <a className="color2" href="mailto:yourmail@email.com">customercare@finbank.com</a>
+                                                                                    <strong>Email:</strong> <a className="color2" href="mailto:Info@mwalimubank.co.tz">Info@mwalimubank.co.tz</a>
                                                                                 </li>
                                                                             </ul>
                                                                         </td>
@@ -418,23 +417,6 @@ export default function Home() {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-xl-4">
-                                    <div className="contact-info-sidebar" style={{ padding: '40px', background: '#f7f1eb', borderRadius: '8px', marginTop: '100px' }}>
-                                        <h3 style={{ marginBottom: '20px', color: '#1a1c23', fontSize: '24px', fontWeight: '600' }}>Contact Information</h3>
-                                        <div style={{ marginBottom: '20px' }}>
-                                            <p style={{ marginBottom: '8px', color: '#7f7873', fontSize: '14px', fontWeight: '500' }}>Phone Number:</p>
-                                            <p style={{ margin: 0, fontSize: '18px', color: '#1a1c23' }}>
-                                                <a href="tel:0222775131" style={{ color: '#0E519A', textDecoration: 'none' }}>022 277 5131</a>
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <p style={{ marginBottom: '8px', color: '#7f7873', fontSize: '14px', fontWeight: '500' }}>Email:</p>
-                                            <p style={{ margin: 0, fontSize: '18px', color: '#1a1c23' }}>
-                                                <a href="mailto:Info@mwalimubank.co.tz" style={{ color: '#0E519A', textDecoration: 'none' }}>Info@mwalimubank.co.tz</a>
-                                            </p>
                                         </div>
                                     </div>
                                 </div>
