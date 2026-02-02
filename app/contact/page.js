@@ -392,7 +392,7 @@ export default function Home() {
                                                             <table className="customer-care-numbers-table">
                                                                 <thead className="header">
                                                                     <tr>
-                                                                        <th>Service</th>
+                                                                        <th>Location</th>
                                                                         <th>Contact Details</th>
                                                                     </tr>
                                                                 </thead>
