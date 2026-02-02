@@ -250,12 +250,12 @@ export default function Home() {
                                 <div className="text" key={`text-${activeContent}`}>
                                 {activeContent === 'mission' && (
                                     <p>
-                                        "To offer financial services to Tanzanian education ecosystem and related sectors, so as to benefit our society economically and socially."
+                                        To offer financial services to Tanzanian education ecosystem and related sectors, so as to benefit our society economically and socially.
                                     </p>
                                 )}
                                 {activeContent === 'vision' && (
                                     <p>
-                                        "To be a preferred financial solution provider in Tanzania"
+                                        To be a preferred financial solution provider in Tanzania
                                     </p>
                                 )}
                                 {activeContent === 'coreValues' && (
