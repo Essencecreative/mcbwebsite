@@ -258,7 +258,7 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
                   <li><Link href="/investor-news" onClick={handleMobileMenu}>Investor News</Link></li>
                   <li><Link href="/annual-general-meeting" onClick={handleMobileMenu}>Annual General Meeting</Link></li>
                   <li><Link href="/financial-reports" onClick={handleMobileMenu}>Financial Reports</Link></li>
-                  <li><Link href="/tarif-guide" onClick={handleMobileMenu}>Tarif Guide</Link></li>
+                  <li><Link href="/tarif-guide" onClick={handleMobileMenu}>Tariff Guide</Link></li>
                   <li><Link href="/shareholding-structure" onClick={handleMobileMenu}>Shareholding Structure</Link></li>
                   <li><Link href="/share-price" onClick={handleMobileMenu}>Share Price</Link></li>
                   <li><Link href="/investors-relation-contect" onClick={handleMobileMenu}>Investors Relation Contact</Link></li>
@@ -280,19 +280,33 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
           <ul className="mobile-nav__contact list-unstyled">
             <li>
               <i className="fa fa-envelope" />
-              <a href="mailto:info@example.com">info@example.com</a>
+              <a href="mailto:Info@mwalimubank.co.tz">Info@mwalimubank.co.tz</a>
             </li>
             <li>
               <i className="fa fa-phone-alt" />
-              <a href="tel:123456789">444 000 777 66</a>
+              <a href="tel:0222775131">022 277 5131</a>
             </li>
           </ul>
           {/* /.mobile-nav__contact */}
           <div className="mobile-nav__social">
-            <a href="#" className="fab fa-twitter" />
-            <a href="#" className="fab fa-facebook-square" />
-            <a href="#" className="fab fa-pinterest-p" />
-            <a href="#" className="fab fa-instagram" />
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.linkedin.com/company/mwalimu-commercial-bank-plc/"
+              className="fab fa-linkedin"
+            />
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.instagram.com/mwalimubank/?hl=en"
+              className="fab fa-instagram"
+            />
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.facebook.com/mwalimubankplc/"
+              className="fab fa-facebook-f"
+            />
           </div>
           {/* /.mobile-nav__social */}
         </div>

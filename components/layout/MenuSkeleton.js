@@ -63,7 +63,7 @@ export default function MenuSkeleton() {
                         <li><Link href="/investor-news">Investor News</Link></li>
                         <li><Link href="/annual-general-meeting">Annual General Meeting</Link></li>
                         <li><Link href="/financial-reports">Financial Reports</Link></li>
-                        <li><Link href="/tarif-guide">Tarif Guide</Link></li>
+                        <li><Link href="/tarif-guide">Tariff Guide</Link></li>
                         <li><Link href="/shareholding-structure">Shareholding Structure</Link></li>
                         <li><Link href="/share-price">Share Price</Link></li>
                         <li><Link href="/investors-relation-contect">Investors Relation Contact</Link></li>
@@ -84,4 +84,3 @@ export default function MenuSkeleton() {
         </>
     );
 }
-

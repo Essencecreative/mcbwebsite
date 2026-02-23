@@ -1,6 +1,8 @@
 import Link from "next/link"
 
 export default function Footer1() {
+    const currentYear = new Date().getFullYear()
+
     return (
         <>
         {/* Start footer area */}
@@ -89,7 +91,7 @@ export default function Footer1() {
                 <div className="bottom-inner">
                 <div className="footer-menu">
                     <ul>
-                    <li><Link target="_blank" rel="noopener noreferrer" href="http://essence.co.tz">2025 © All rights Reserved. Designed by: Essence Creative</Link></li>
+                    <li><Link target="_blank" rel="noopener noreferrer" href="http://essence.co.tz">{currentYear} © All rights Reserved. Designed by: Essence Creative</Link></li>
                     </ul>
                 </div>
                 <div className="footer-social-link">
