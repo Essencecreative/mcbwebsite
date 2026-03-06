@@ -261,14 +261,14 @@ export default function Home() {
                                 {activeContent === 'coreValues' && (
                                     <div key="corevalues-text">
                                         <p style={{ marginBottom: '20px' }}>
-                                            Core values are the ideals and enduring principles that underpin the institution's performance and culture MCB shall embrace the following core values in order to effectively and efficiently deliver to our customers:
+                                            Core values are the ideals and enduring principles that underpin the institution&apos;s performance and culture MCB shall embrace the following core values in order to effectively and efficiently deliver to our customers:
                                         </p>
                                         <ul style={{ paddingLeft: '20px', marginTop: '15px', listStyleType: 'disc', color: '#ffffff' }}>
-                                            <li style={{ marginBottom: '12px', color: '#ffffff' }}><strong style={{ color: '#ffffff' }}>Customer Focus:</strong> Everything we do should add value to the customer.</li>
-                                            <li style={{ marginBottom: '12px', color: '#ffffff' }}><strong style={{ color: '#ffffff' }}>Innovation:</strong> We are innovative in our approach</li>
-                                            <li style={{ marginBottom: '12px', color: '#ffffff' }}><strong style={{ color: '#ffffff' }}>Efficiency:</strong> Provide services in cost effective and timely manner.</li>
-                                            <li style={{ marginBottom: '12px', color: '#ffffff' }}><strong style={{ color: '#ffffff' }}>Team work:</strong> Our approach is collaborative</li>
-                                            <li style={{ marginBottom: '12px', color: '#ffffff' }}><strong style={{ color: '#ffffff' }}>Integrity:</strong> We observe high levels of integrity in all our actions.</li>
+                                            <li style={{ marginBottom: '12px', color: '#ffffff' }}><strong style={{ color: '#ffffff' }}>Integrity:</strong> We observe high levels of honesty in all our actions.</li>
+                                            <li style={{ marginBottom: '12px', color: '#ffffff' }}><strong style={{ color: '#ffffff' }}>Excellence:</strong> Delivering what we promise and add value beyond expectation.</li>
+                                            <li style={{ marginBottom: '12px', color: '#ffffff' }}><strong style={{ color: '#ffffff' }}>Collaborative Inclusion:</strong> Committed to creating a respectful work environment where everybody has equal access to opportunities while bringing out the best in individual staff.</li>
+                                            <li style={{ marginBottom: '12px', color: '#ffffff' }}><strong style={{ color: '#ffffff' }}>Innovation:</strong> Freedom to question norms with bold, progressive ideas and actions.</li>
+                                            <li style={{ marginBottom: '12px', color: '#ffffff' }}><strong style={{ color: '#ffffff' }}>Customer Centric:</strong> Everything we do should add value and satisfy to our customer's financial need.</li>
                                         </ul>
                                     </div>
                                 )}
