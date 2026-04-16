@@ -1,5 +1,5 @@
 // API Base URL - Change this when deploying to production
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://66.29.133.39:5000';
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'https://service.mwalimubank.co.tz';
 
 // Import cache utilities
 import { getCachedData, setCachedData } from './cache';
