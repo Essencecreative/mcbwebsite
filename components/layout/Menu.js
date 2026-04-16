@@ -159,7 +159,14 @@ export default function Menu() {
                     <ul style={{ left: '-100%' }}>
                         <li><Link href="/investor-news">Investor News</Link></li>
                         <li><Link href="/annual-general-meeting">Annual General Meeting</Link></li>
-                        <li><Link href="/financial-reports">Financial Reports</Link></li>
+                        <li className="dropdown">
+                            <Link href="#">Reports</Link>
+                            <ul style={{ right: 'calc(100% + 15px)', left: 'auto', top: '0' }}>
+                                <li><Link href="/reports?type=Financial Report">Financial Reports</Link></li>
+                                <li><Link href="/reports?type=Annual Report">Annual Reports</Link></li>
+                                <li><Link href="/reports?type=Market Disclosure">Market Disclosures</Link></li>
+                            </ul>
+                        </li>
                         <li><Link href="/tarif-guide">Tariff Guide</Link></li>
                         <li><Link href="/shareholding-structure">Shareholding Structure</Link></li>
                         <li><Link href="/share-price">Share Price</Link></li>

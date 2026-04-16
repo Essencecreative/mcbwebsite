@@ -257,7 +257,22 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
                 <ul style={{ display: `${isActive.key == 10 ? "block" : "none"}` }}>
                   <li><Link href="/investor-news" onClick={handleMobileMenu}>Investor News</Link></li>
                   <li><Link href="/annual-general-meeting" onClick={handleMobileMenu}>Annual General Meeting</Link></li>
-                  <li><Link href="/financial-reports" onClick={handleMobileMenu}>Financial Reports</Link></li>
+                  <li className={isActive.subMenuKey === "reports-sub" ? "dropdown current" : "dropdown"}>
+                    <Link href="#" onClick={(e) => { e.preventDefault(); handleToggle(10, "reports-sub"); }}>
+                      Reports
+                    </Link>
+                    <ul style={{ display: `${isActive.subMenuKey === "reports-sub" ? "block" : "none"}` }}>
+                      <li><Link href="/reports?type=Financial Report" onClick={handleMobileMenu}>Financial Reports</Link></li>
+                      <li><Link href="/reports?type=Annual Report" onClick={handleMobileMenu}>Annual Reports</Link></li>
+                      <li><Link href="/reports?type=Market Disclosure" onClick={handleMobileMenu}>Market Disclosures</Link></li>
+                    </ul>
+                    <div 
+                      className={isActive.subMenuKey === "reports-sub" ? "dropdown-btn open" : "dropdown-btn"} 
+                      onClick={() => handleToggle(10, "reports-sub")}
+                    >
+                      <span className="fa fa-angle-right" />
+                    </div>
+                  </li>
                   <li><Link href="/tarif-guide" onClick={handleMobileMenu}>Tariff Guide</Link></li>
                   <li><Link href="/shareholding-structure" onClick={handleMobileMenu}>Shareholding Structure</Link></li>
                   <li><Link href="/share-price" onClick={handleMobileMenu}>Share Price</Link></li>

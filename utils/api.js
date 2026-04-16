@@ -1,5 +1,5 @@
 // API Base URL - Change this when deploying to production
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'https://service.mwalimubank.co.tz';
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
 // Import cache utilities
 import { getCachedData, setCachedData } from './cache';
@@ -139,9 +139,13 @@ export const getActiveHeaderUpdate = async () => {
 };
 
 // Investor Categories API
-export const getInvestorCategories = async (category, page = 1, limit = 10) => {
+export const getInvestorCategories = async (category, page = 1, limit = 10, type = "") => {
   try {
-    const res = await fetch(`${API_BASE}/investor-categories?category=${category}&page=${page}&limit=${limit}`);
+    let url = `${API_BASE}/investor-categories?category=${category}&page=${page}&limit=${limit}`;
+    if (type) {
+      url += `&type=${encodeURIComponent(type)}`;
+    }
+    const res = await fetch(url);
     if (!res.ok) throw new Error("Failed to fetch investor categories");
     const data = await res.json();
     return {
