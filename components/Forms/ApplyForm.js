@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { submitApplicationForm } from '@/utils/api';
+import { sendGAEvent } from '@next/third-parties/google';
 
 const ApplyForm = ({
   selectOptions = [],
@@ -63,6 +64,14 @@ const ApplyForm = ({
       // Send to API
       await submitApplicationForm(formData, formType);
       
+      // Track Event in Google Analytics
+      sendGAEvent({ 
+        event: 'form_submission', 
+        value: formData.selectedOption,
+        form_type: formType,
+        region: formData.region
+      });
+
       setSubmitStatus({
         type: 'success',
         message: 'Thank you for your submission! We will contact you soon.'

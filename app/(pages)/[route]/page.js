@@ -5,6 +5,7 @@ import { useRouter, useSearchParams, useParams } from "next/navigation";
 import Layout from "@/components/layout/Layout";
 import ApplyForm from "@/components/Forms/ApplyForm";
 import { getMenuItemsByRoute, getImageUrl } from "@/utils/api";
+import { sendGAEvent } from "@next/third-parties/google";
 
 export default function DynamicMenuPage() {
   const router = useRouter();
@@ -47,7 +48,7 @@ export default function DynamicMenuPage() {
     }
   }, [route, searchParams]);
 
-  // Sync activeType with query param
+  // Sync activeType with query param and Track GA Event
   useEffect(() => {
     const type = searchParams.get("type");
     if (type && menuItems.length > 0) {
@@ -55,9 +56,13 @@ export default function DynamicMenuPage() {
       const item = menuItems.find(item => item.name === decodedType);
       if (item) {
         setActiveType(item.name);
+        // Track product view
+        sendGAEvent({ event: 'view_product', product_name: item.name, category: route });
       }
     } else if (menuItems.length > 0 && !activeType) {
       setActiveType(menuItems[0].name);
+      // Track initial product view
+      sendGAEvent({ event: 'view_product', product_name: menuItems[0].name, category: route });
     }
   }, [searchParams, menuItems]);
 
