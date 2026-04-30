@@ -5,6 +5,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
 import { manrope, dM_Sans } from "@/lib/font";
+import { GoogleAnalytics } from "@next/third-parties/google";
+
 export const metadata = {
   title: "Mwalimu Commercial Bank",
   description: "Mwalimu Commercial Bank",
@@ -14,6 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${manrope.variable} ${dM_Sans.variable}`}>
       <body>{children}</body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
     </html>
   );
 }

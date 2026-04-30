@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/third-parties": "^16.2.4",
     "@thednp/dommatrix": "^2.0.6",
     "bootstrap-touchspin": "^4.7.3",
     "isotope-layout": "^3.0.6",
