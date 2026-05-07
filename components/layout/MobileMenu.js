@@ -273,6 +273,7 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
                       <span className="fa fa-angle-right" />
                     </div>
                   </li>
+                  <li><Link href="/rights-issue" onClick={handleMobileMenu}>Rights Issue</Link></li>
                   <li><Link href="/tarif-guide" onClick={handleMobileMenu}>Tariff Guide</Link></li>
                   <li><Link href="/shareholding-structure" onClick={handleMobileMenu}>Shareholding Structure</Link></li>
                   <li><Link href="/share-price" onClick={handleMobileMenu}>Share Price</Link></li>

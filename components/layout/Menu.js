@@ -167,6 +167,7 @@ export default function Menu() {
                                 <li><Link href="/reports?type=Market Disclosure">Market Disclosures</Link></li>
                             </ul>
                         </li>
+                        <li><Link href="/rights-issue">Rights Issue</Link></li>
                         <li><Link href="/tarif-guide">Tariff Guide</Link></li>
                         <li><Link href="/shareholding-structure">Shareholding Structure</Link></li>
                         <li><Link href="/share-price">Share Price</Link></li>
