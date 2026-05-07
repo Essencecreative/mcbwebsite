@@ -83,9 +83,7 @@ export default function Menu() {
                                                             <li style={{ fontWeight: 'bold', color: '#E97927', textDecoration: 'none' }}>
                                                                 {subcat.displayName}
                                                             </li>
-                                                            {subcatItems
-                                                                .filter(item => !['right issue', 'rights issue'].includes(item.name.toLowerCase()))
-                                                                .map((item) => (
+                                                            {subcatItems.map((item) => (
                                                                 <li key={item._id} className="mega-list-item">
                                                                     <Link href={`${item.route}?type=${encodeURIComponent(item.name)}`}>
                                                                         {item.name}
@@ -115,9 +113,7 @@ export default function Menu() {
             <li className="dropdown" key={category._id}>
                 <Link href="#">{category.displayName}</Link>
                 <ul>
-                    {allItems
-                        .filter(item => !['right issue', 'rights issue'].includes(item.name.toLowerCase()))
-                        .map((item) => (
+                    {allItems.map((item) => (
                         <li key={item._id}>
                             <Link href={`${item.route}?type=${encodeURIComponent(item.name)}`}>
                                 {item.name}
@@ -175,7 +171,6 @@ export default function Menu() {
                         <li><Link href="/shareholding-structure">Shareholding Structure</Link></li>
                         <li><Link href="/share-price">Share Price</Link></li>
                         <li><Link href="/investors-relation-contect">Investors Relation Contact</Link></li>
-                        <li><Link href="/Invest?type=Right%20Issue">Right Issue</Link></li>
                     </ul>
                 </li>
             </ul>

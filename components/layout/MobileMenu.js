@@ -121,9 +121,7 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
                     {subcat.displayName}
                   </Link>
                   <ul style={{ display: `${isActive.subMenuKey == subcatKey ? "block" : "none"}` }}>
-                    {subcatItems
-                      .filter(item => !['right issue', 'rights issue'].includes(item.name.toLowerCase()))
-                      .map((item) => (
+                    {subcatItems.map((item) => (
                       <li key={item._id}>
                         <Link 
                           href={`${item.route}?type=${encodeURIComponent(item.name)}`} 
@@ -165,9 +163,7 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
             {category.displayName}
           </Link>
           <ul style={{ display: `${isActive.key == categoryKey ? "block" : "none"}` }}>
-            {allItems
-              .filter(item => !['right issue', 'rights issue'].includes(item.name.toLowerCase()))
-              .map((item) => (
+            {allItems.map((item) => (
               <li key={item._id}>
                 <Link 
                   href={`${item.route}?type=${encodeURIComponent(item.name)}`} 
@@ -281,7 +277,6 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
                   <li><Link href="/shareholding-structure" onClick={handleMobileMenu}>Shareholding Structure</Link></li>
                   <li><Link href="/share-price" onClick={handleMobileMenu}>Share Price</Link></li>
                   <li><Link href="/investors-relation-contect" onClick={handleMobileMenu}>Investors Relation Contact</Link></li>
-                  <li><Link href="/Invest?type=Right%20Issue" onClick={handleMobileMenu}>Right Issue</Link></li>
                 </ul>
                 <div 
                   className={isActive.key == 10 ? "dropdown-btn open" : "dropdown-btn"} 

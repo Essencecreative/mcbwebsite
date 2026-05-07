@@ -67,7 +67,6 @@ export default function MenuSkeleton() {
                         <li><Link href="/shareholding-structure">Shareholding Structure</Link></li>
                         <li><Link href="/share-price">Share Price</Link></li>
                         <li><Link href="/investors-relation-contect">Investors Relation Contact</Link></li>
-                        <li><Link href="/Invest?type=Right%20Issue">Right Issue</Link></li>
                     </ul>
                 </li>
             </ul>
