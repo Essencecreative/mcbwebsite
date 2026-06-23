@@ -12,6 +12,7 @@ import ServiceStyle1 from "@/components/sections/home1/ServiceStyle1"
 import Slogan from "@/components/sections/home1/Slogan"
 import ServiceRequest from "@/components/sections/home2/ServiceRequest"
 import ForeignExchangeSlider from "@/components/Foreign/ForeignExchangeSlider"
+import YoutubeVideoCarousel from "@/components/sections/home1/YoutubeVideoCarousel"
 export default function Home() {
 
     return (
@@ -26,6 +27,7 @@ export default function Home() {
                    </div>
                 {/* <FeaturesStyle1 />
                 <ServiceStyle1 /> */}
+                <YoutubeVideoCarousel />
                 <WealthSecure />
                 {/* <FeaturesStyle2 />
                 <FeaturesStyle3 />

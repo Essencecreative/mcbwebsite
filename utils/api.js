@@ -368,3 +368,16 @@ export const getImageUrl = (imagePath) => {
   return `${baseUrl}/${cleanPath}`;
 };
 
+// YouTube Videos API
+export const getYoutubeVideos = async () => {
+  try {
+    const res = await fetch(`${API_BASE}/youtube-videos`);
+    if (!res.ok) throw new Error("Failed to fetch YouTube videos");
+    const data = await res.json();
+    return data.videos || [];
+  } catch (error) {
+    console.error("Error fetching YouTube videos:", error);
+    return [];
+  }
+};
+
