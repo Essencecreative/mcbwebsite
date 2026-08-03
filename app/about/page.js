@@ -250,25 +250,22 @@ export default function Home() {
                                 <div className="text">
                                 {activeContent === 'mission' && (
                                     <p key="mission-text">
-                                        To offer financial services to Tanzanian education ecosystem and related sectors, so as to benefit our society economically and socially.
+                                        To provide innovative financial services to the educational ecosystem in Tanzania and other sectors, thereby promoting financial inclusion and sustainable development.
                                     </p>
                                 )}
                                 {activeContent === 'vision' && (
                                     <p key="vision-text">
-                                        To be a preferred financial solution provider in Tanzania
+                                        To be a preferred and trusted financial solution provider in Tanzania.
                                     </p>
                                 )}
                                 {activeContent === 'coreValues' && (
                                     <div key="corevalues-text">
-                                        <p style={{ marginBottom: '20px' }}>
-                                            Core values are the ideals and enduring principles that underpin the institution&apos;s performance and culture MCB shall embrace the following core values in order to effectively and efficiently deliver to our customers:
-                                        </p>
                                         <ul style={{ paddingLeft: '20px', marginTop: '15px', listStyleType: 'disc', color: '#ffffff' }}>
                                             <li style={{ marginBottom: '12px', color: '#ffffff' }}><strong style={{ color: '#ffffff' }}>Integrity:</strong> We observe high levels of honesty in all our actions.</li>
-                                            <li style={{ marginBottom: '12px', color: '#ffffff' }}><strong style={{ color: '#ffffff' }}>Excellence:</strong> Delivering what we promise and add value beyond expectation.</li>
-                                            <li style={{ marginBottom: '12px', color: '#ffffff' }}><strong style={{ color: '#ffffff' }}>Collaborative Inclusion:</strong> Committed to creating a respectful work environment where everybody has equal access to opportunities while bringing out the best in individual staff.</li>
-                                            <li style={{ marginBottom: '12px', color: '#ffffff' }}><strong style={{ color: '#ffffff' }}>Innovation:</strong> Freedom to question norms with bold, progressive ideas and actions.</li>
-                                            <li style={{ marginBottom: '12px', color: '#ffffff' }}><strong style={{ color: '#ffffff' }}>Customer Centric:</strong> Everything we do should add value and satisfy to our customer's financial need.</li>
+                                            <li style={{ marginBottom: '12px', color: '#ffffff' }}><strong style={{ color: '#ffffff' }}>Efficiency:</strong> Provide timely and cost-effective services while embracing a culture of risk management and compliance.</li>
+                                            <li style={{ marginBottom: '12px', color: '#ffffff' }}><strong style={{ color: '#ffffff' }}>Inclusiveness:</strong> We value team participation in harnessing multiple skills and experiences in discharging our duties.</li>
+                                            <li style={{ marginBottom: '12px', color: '#ffffff' }}><strong style={{ color: '#ffffff' }}>Innovation:</strong> Commitment to creativity, forward thinking towards products and services for sustainable growth.</li>
+                                            <li style={{ marginBottom: '12px', color: '#ffffff' }}><strong style={{ color: '#ffffff' }}>Customer Centric:</strong> Adding value to satisfy our customers&apos; financial needs.</li>
                                         </ul>
                                     </div>
                                 )}

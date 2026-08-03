@@ -14857,3 +14857,39 @@ li.single-benefits-box-colum:nth-child(6) .single-benefits-box .icon {
   .yt-section-title { font-size: 28px; }
   .yt-content-title { font-size: 20px; }
 }
+
+/* ==== Rendered content tables (from dashboard additionalContent markdown) ==== */
+.content-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 15px;
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+}
+.content-table th,
+.content-table td {
+  border: 1px solid #e6e6e6;
+  padding: 12px 16px;
+  text-align: left;
+  vertical-align: top;
+}
+.content-table thead th {
+  background-color: #143d78;
+  color: #fff;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.content-table tbody tr:nth-child(even) {
+  background-color: #f7f9fc;
+}
+.content-table tbody tr:hover {
+  background-color: #fdf1e8;
+}
+@media (max-width: 767px) {
+  .content-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

@@ -105,9 +105,56 @@ export default function Menu() {
         );
     };
 
+    // Invest: these options are grouped under a nested "Fixed Deposit" fly-out
+    const FIXED_DEPOSIT_NAMES = [
+        "Instant Income/Upfront",
+        "Semi Fixed/Flexible",
+        "Regular Interest Payment",
+    ];
+
     const renderDropdown = (category) => {
         const items = menuItemsMap[category.name] || {};
         const allItems = Object.values(items).flat().sort((a, b) => a.position - b.position);
+
+        // Special layout for the Invest menu: group the Fixed Deposit options
+        // into a nested submenu that opens on hover (like Investors > Reports).
+        if (category.name === "invest") {
+            const fixedDepositItems = allItems.filter((item) =>
+                FIXED_DEPOSIT_NAMES.includes(item.name)
+            );
+            const otherItems = allItems.filter(
+                (item) => !FIXED_DEPOSIT_NAMES.includes(item.name)
+            );
+
+            return (
+                <li className="dropdown" key={category._id}>
+                    <Link href="#">{category.displayName}</Link>
+                    <ul>
+                        {fixedDepositItems.length > 0 && (
+                            <li className="dropdown">
+                                <Link href="#">Fixed Deposit</Link>
+                                <ul>
+                                    {fixedDepositItems.map((item) => (
+                                        <li key={item._id}>
+                                            <Link href={`${item.route}?type=${encodeURIComponent(item.name)}`}>
+                                                {item.name}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </li>
+                        )}
+                        {otherItems.map((item) => (
+                            <li key={item._id}>
+                                <Link href={`${item.route}?type=${encodeURIComponent(item.name)}`}>
+                                    {item.name}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </li>
+            );
+        }
 
         return (
             <li className="dropdown" key={category._id}>

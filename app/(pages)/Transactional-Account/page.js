@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Layout from "@/components/layout/Layout";
 import ApplyForm from "@/components/Forms/ApplyForm";
+import { renderRichContent } from "@/utils/renderContent";
 import { getMenuItemsByRoute, getImageUrl } from "@/utils/api";
 
 export default function TransactionalAccount() {
@@ -204,7 +205,7 @@ export default function TransactionalAccount() {
                     <div
                       className="blog-content"
                       style={{ marginTop: '30px' }}
-                      dangerouslySetInnerHTML={{ __html: pageContent.additionalContent }}
+                      dangerouslySetInnerHTML={{ __html: renderRichContent(pageContent.additionalContent) }}
                     />
                   )}
                 </div>

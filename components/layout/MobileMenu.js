@@ -3,6 +3,13 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { getMenuCategories, getMenuItems } from "@/utils/api";
 
+// Invest: these options are grouped under a nested "Fixed Deposit" submenu
+const FIXED_DEPOSIT_NAMES = [
+  "Instant Income/Upfront",
+  "Semi Fixed/Flexible",
+  "Regular Interest Payment",
+];
+
 const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
   const [isActive, setIsActive] = useState({
     status: false,
@@ -153,20 +160,54 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
     } else {
       // Category without subcategories - render items directly
       const allItems = Object.values(items).flat().sort((a, b) => a.position - b.position);
-      
+
+      // Invest: group the Fixed Deposit options into a nested collapsible submenu
+      const isInvest = category.name === "invest";
+      const fixedDepositItems = isInvest
+        ? allItems.filter((item) => FIXED_DEPOSIT_NAMES.includes(item.name))
+        : [];
+      const directItems = isInvest
+        ? allItems.filter((item) => !FIXED_DEPOSIT_NAMES.includes(item.name))
+        : allItems;
+
       return (
-        <li 
-          key={category._id} 
+        <li
+          key={category._id}
           className={isActive.key == categoryKey ? "dropdown current" : "dropdown"}
         >
           <Link href="#" onClick={(e) => { e.preventDefault(); handleToggle(categoryKey); }}>
             {category.displayName}
           </Link>
           <ul style={{ display: `${isActive.key == categoryKey ? "block" : "none"}` }}>
-            {allItems.map((item) => (
+            {fixedDepositItems.length > 0 && (
+              <li className={isActive.subMenuKey === "fixed-deposit-sub" ? "dropdown current" : "dropdown"}>
+                <Link href="#" onClick={(e) => { e.preventDefault(); handleToggle(categoryKey, "fixed-deposit-sub"); }}>
+                  Fixed Deposit
+                </Link>
+                <ul style={{ display: `${isActive.subMenuKey === "fixed-deposit-sub" ? "block" : "none"}` }}>
+                  {fixedDepositItems.map((item) => (
+                    <li key={item._id}>
+                      <Link
+                        href={`${item.route}?type=${encodeURIComponent(item.name)}`}
+                        onClick={handleMobileMenu}
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <div
+                  className={isActive.subMenuKey === "fixed-deposit-sub" ? "dropdown-btn open" : "dropdown-btn"}
+                  onClick={() => handleToggle(categoryKey, "fixed-deposit-sub")}
+                >
+                  <span className="fa fa-angle-right" />
+                </div>
+              </li>
+            )}
+            {directItems.map((item) => (
               <li key={item._id}>
-                <Link 
-                  href={`${item.route}?type=${encodeURIComponent(item.name)}`} 
+                <Link
+                  href={`${item.route}?type=${encodeURIComponent(item.name)}`}
                   onClick={handleMobileMenu}
                 >
                   {item.name}
@@ -174,8 +215,8 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
               </li>
             ))}
           </ul>
-          <div 
-            className={isActive.key == categoryKey ? "dropdown-btn open" : "dropdown-btn"} 
+          <div
+            className={isActive.key == categoryKey ? "dropdown-btn open" : "dropdown-btn"}
             onClick={() => handleToggle(categoryKey)}
           >
             <span className="fa fa-angle-right" />
