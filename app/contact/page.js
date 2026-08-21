@@ -1,6 +1,6 @@
 "use client"
 import Layout from "@/components/layout/Layout"
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import { submitContactForm } from "@/utils/api";
 
@@ -17,12 +17,6 @@ const CONTACT_LOCATIONS = [
         tab: 'Samora',
         title: 'Samora Branch – Consolidated Holding Building, Ground Floor, P.O. Box 61002, Dar es Salaam',
         mapsQuery: 'Consolidated Holding Corporation Building Samora Avenue Dar es Salaam',
-    },
-    {
-        id: 'mlimani',
-        tab: 'Mlimani',
-        title: 'Mlimani Branch – Mlimani Tower, Mezzanine Floor, Sam Nujoma Road, P.O. Box 61002, Dar es Salaam',
-        mapsQuery: 'Mlimani Tower Sam Nujoma Road Dar es Salaam',
     },
     {
         id: 'mbeya',
@@ -97,9 +91,9 @@ const CONTACT_LOCATIONS = [
     {
         id: 'ruvuma',
         tab: 'Ruvuma',
-        title: 'Ruvuma Regional Office – Lininu Street, Soko Kuu, Ruvuma',
+        title: 'Ruvuma Regional Office – Litunu Street, Soko Kuu, Ruvuma',
         served: 'Serves: Ruvuma',
-        mapsQuery: 'Lininu Street Soko Kuu Songea Ruvuma',
+        mapsQuery: 'Litunu Street Soko Kuu Songea Ruvuma',
     },
 ];
 
@@ -115,8 +109,16 @@ export default function Home() {
     const [submitting, setSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
 
+    const tabsRef = useRef(null);
+
     const handleCustomerTabClick = (tab) => {
         setActiveCustomerTab(tab);
+    };
+
+    const scrollTabs = (direction) => {
+        if (tabsRef.current) {
+            tabsRef.current.scrollBy({ left: direction * 220, behavior: 'smooth' });
+        }
     };
 
     const handleInputChange = (e) => {
@@ -464,8 +466,19 @@ export default function Home() {
                             <div className="row">
                                 <div className="col-xl-12">
                                     <div className="customer-care-numbers-tab">
-                                        <div className="customer-care-numbers-tab__button">
-                                            <ul className="tabs-button-box clearfix">
+                                        <div className="customer-care-numbers-tab__button" style={{ position: 'relative' }}>
+                                            <button
+                                                type="button"
+                                                aria-label="Scroll tabs left"
+                                                className="tab-scroll-arrow tab-scroll-arrow--left"
+                                                onClick={() => scrollTabs(-1)}
+                                            >
+                                                <i className="fa fa-angle-left" />
+                                            </button>
+                                            <ul
+                                                ref={tabsRef}
+                                                className="tabs-button-box clearfix tabs-button-box--scroll"
+                                            >
                                                 {CONTACT_LOCATIONS.map((loc) => (
                                                     <li
                                                         key={loc.id}
@@ -477,6 +490,14 @@ export default function Home() {
                                                     </li>
                                                 ))}
                                             </ul>
+                                            <button
+                                                type="button"
+                                                aria-label="Scroll tabs right"
+                                                className="tab-scroll-arrow tab-scroll-arrow--right"
+                                                onClick={() => scrollTabs(1)}
+                                            >
+                                                <i className="fa fa-angle-right" />
+                                            </button>
                                         </div>
 
                                         {/* Tabs Content Box */}
@@ -591,6 +612,58 @@ export default function Home() {
                         }
                         .customer-care-numbers-area .customer-care-numbers-tab__button .tabs-button-box .tab-btn-item.active-btn-item h4 {
                             color: #ffffff !important;
+                        }
+
+                        /* Single-line, horizontally scrollable tab row */
+                        .customer-care-numbers-tab__button {
+                            padding-left: 48px;
+                            padding-right: 48px;
+                        }
+                        .tabs-button-box--scroll {
+                            display: flex !important;
+                            flex-wrap: nowrap !important;
+                            overflow-x: auto;
+                            scroll-behavior: smooth;
+                            -ms-overflow-style: none;
+                            scrollbar-width: none;
+                            margin: 0;
+                        }
+                        .tabs-button-box--scroll::-webkit-scrollbar {
+                            display: none;
+                        }
+                        .tabs-button-box--scroll .tab-btn-item {
+                            flex: 0 0 auto;
+                            white-space: nowrap;
+                            float: none !important;
+                        }
+                        .tab-scroll-arrow {
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            z-index: 5;
+                            width: 38px;
+                            height: 38px;
+                            border: none;
+                            border-radius: 50%;
+                            cursor: pointer;
+                            background-image: linear-gradient(0deg, #0A3B73 0%, #0E519A 100%);
+                            color: #ffffff;
+                            font-size: 18px;
+                            line-height: 1;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            box-shadow: 0px 2px 8px rgba(10, 59, 115, 0.3);
+                            transition: opacity 0.3s ease;
+                        }
+                        .tab-scroll-arrow:hover {
+                            opacity: 0.9;
+                        }
+                        .tab-scroll-arrow--left {
+                            left: 0;
+                        }
+                        .tab-scroll-arrow--right {
+                            right: 0;
                         }
                     `}</style>
 
