@@ -4,6 +4,105 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { submitContactForm } from "@/utils/api";
 
+// MCB head office, bank branches and regional offices shown as tabs below.
+const CONTACT_LOCATIONS = [
+    {
+        id: 'mcb-hq',
+        tab: 'MCB HQ',
+        title: 'Mlimani Tower – Mezzanine Floor, Sam Nujoma Road, P.O. Box 61002, Dar es Salaam, Tanzania',
+        maps: 'https://maps.app.goo.gl/RfmM2gzMjYkkkxvL7?g_st=ipc',
+    },
+    {
+        id: 'samora',
+        tab: 'Samora',
+        title: 'Samora Branch – Consolidated Holding Building, Ground Floor, P.O. Box 61002, Dar es Salaam',
+        mapsQuery: 'Consolidated Holding Corporation Building Samora Avenue Dar es Salaam',
+    },
+    {
+        id: 'mlimani',
+        tab: 'Mlimani',
+        title: 'Mlimani Branch – Mlimani Tower, Mezzanine Floor, Sam Nujoma Road, P.O. Box 61002, Dar es Salaam',
+        mapsQuery: 'Mlimani Tower Sam Nujoma Road Dar es Salaam',
+    },
+    {
+        id: 'mbeya',
+        tab: 'Mbeya',
+        title: 'Mbeya Regional Office – Mbalizi Road, Ukaguzi Street, Mbeya',
+        served: 'Serves: Njombe, Mbeya, Songwe',
+        mapsQuery: 'Mbalizi Road Ukaguzi Street Mbeya',
+    },
+    {
+        id: 'mwanza',
+        tab: 'Mwanza',
+        title: 'Mwanza Regional Office – Kenyatta Road, PSSSF Building, Mwanza',
+        served: 'Serves: Mwanza, Simiyu, Mara',
+        mapsQuery: 'Kenyatta Road PSSSF Building Mwanza',
+    },
+    {
+        id: 'morogoro',
+        tab: 'Morogoro',
+        title: 'Morogoro Regional Office – Morogoro Municipal, NSSF Building, Morogoro',
+        served: 'Serves: Morogoro, Iringa',
+        mapsQuery: 'NSSF Building Morogoro Municipal',
+    },
+    {
+        id: 'dodoma',
+        tab: 'Dodoma',
+        title: 'Dodoma Regional Office – Nyerere Square, Dodoma',
+        served: 'Serves: Dodoma, Singida',
+        mapsQuery: 'Nyerere Square Dodoma',
+    },
+    {
+        id: 'arusha',
+        tab: 'Arusha',
+        title: 'Arusha Regional Office – Sekei, CWT Building, Arusha',
+        served: 'Serves: Arusha, Manyara, Kilimanjaro',
+        mapsQuery: 'CWT Building Sekei Arusha',
+    },
+    {
+        id: 'mtwara',
+        tab: 'Mtwara',
+        title: 'Mtwara Regional Office – CWT Building, Mtwara',
+        served: 'Serves: Mtwara, Lindi, Ruvuma',
+        mapsQuery: 'CWT Building Mtwara',
+    },
+    {
+        id: 'rukwa',
+        tab: 'Rukwa',
+        title: 'Rukwa Regional Office – Jangwani, CWT Building, Rukwa',
+        served: 'Serves: Rukwa, Katavi',
+        mapsQuery: 'CWT Building Jangwani Sumbawanga Rukwa',
+    },
+    {
+        id: 'kigoma',
+        tab: 'Kigoma',
+        title: 'Kigoma Regional Office – Lumumba Road, Pangani Street, Kigoma',
+        served: 'Serves: Kigoma, Tabora',
+        mapsQuery: 'Lumumba Road Pangani Street Kigoma',
+    },
+    {
+        id: 'geita',
+        tab: 'Geita',
+        title: 'Geita Regional Office – Nyerere Road, Bever Street, Geita',
+        served: 'Serves: Geita, Kagera, Shinyanga',
+        mapsQuery: 'Nyerere Road Geita',
+    },
+    {
+        id: 'kagera',
+        tab: 'Kagera',
+        title: 'Kagera Regional Office – Jamhuri Road, NSSF House, Kagera',
+        served: 'Serves: Kagera',
+        mapsQuery: 'NSSF House Jamhuri Road Bukoba Kagera',
+    },
+    {
+        id: 'ruvuma',
+        tab: 'Ruvuma',
+        title: 'Ruvuma Regional Office – Lininu Street, Soko Kuu, Ruvuma',
+        served: 'Serves: Ruvuma',
+        mapsQuery: 'Lininu Street Soko Kuu Songea Ruvuma',
+    },
+];
+
 export default function Home() {
     const [activeCustomerTab, setActiveCustomerTab] = useState('#mcb-hq');
     const [formData, setFormData] = useState({
@@ -367,86 +466,102 @@ export default function Home() {
                                     <div className="customer-care-numbers-tab">
                                         <div className="customer-care-numbers-tab__button">
                                             <ul className="tabs-button-box clearfix">
-                                                <li 
-                                                    data-tab="#mcb-hq" 
-                                                    className={`tab-btn-item ${activeCustomerTab === '#mcb-hq' ? 'active-btn-item' : ''}`} 
-                                                    onClick={() => handleCustomerTabClick('#mcb-hq')}
-                                                >
-                                                    <h4>MCB HQ</h4>
-                                                </li>
+                                                {CONTACT_LOCATIONS.map((loc) => (
+                                                    <li
+                                                        key={loc.id}
+                                                        data-tab={`#${loc.id}`}
+                                                        className={`tab-btn-item ${activeCustomerTab === `#${loc.id}` ? 'active-btn-item' : ''}`}
+                                                        onClick={() => handleCustomerTabClick(`#${loc.id}`)}
+                                                    >
+                                                        <h4>{loc.tab}</h4>
+                                                    </li>
+                                                ))}
                                             </ul>
                                         </div>
 
                                         {/* Tabs Content Box */}
                                         <div className="tabs-content-box">
-                                            {/* Tab for MCB HQ */}
-                                            <div className={`tab-content-box-item ${activeCustomerTab === '#mcb-hq' ? 'tab-content-box-item-active' : ''}`} id="mcb-hq">
-                                                <div className="customer-care-numbers-tab-content-box-item">
-                                                    <div className="customer-care-numbers-table-box">
-                                                        <div className="table-outer">
-                                                            <table className="customer-care-numbers-table">
-                                                                <thead className="header">
-                                                                    <tr>
-                                                                        <th>Location</th>
-                                                                        <th>Contact Details</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td className="inner-title">
-                                                                            <h3>Mlimani Tower, Samnujoma Road,<br />Dar es Salaam, Tanzania</h3>
-                                                                        </td>
-                                                                        <td className="contact-info">
-                                                                            <ul>
-                                                                                <li>
-                                                                                    <strong>Phone Number:</strong> <a href="tel:0222775131">022 277 5131</a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <strong>Email:</strong> <a className="color2" href="mailto:Info@mwalimubank.co.tz">Info@mwalimubank.co.tz</a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
+                                            {CONTACT_LOCATIONS.map((loc) => {
+                                                const mapsUrl = loc.maps
+                                                    ? loc.maps
+                                                    : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.mapsQuery + ', Tanzania')}`;
+                                                return (
+                                                    <div
+                                                        key={loc.id}
+                                                        className={`tab-content-box-item ${activeCustomerTab === `#${loc.id}` ? 'tab-content-box-item-active' : ''}`}
+                                                        id={loc.id}
+                                                    >
+                                                        <div className="customer-care-numbers-tab-content-box-item">
+                                                            <div className="customer-care-numbers-table-box">
+                                                                <div className="table-outer">
+                                                                    <table className="customer-care-numbers-table">
+                                                                        <thead className="header">
+                                                                            <tr>
+                                                                                <th>Location</th>
+                                                                                <th>Contact Details</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td className="inner-title">
+                                                                                    <h3>{loc.title}</h3>
+                                                                                    {loc.served && (
+                                                                                        <p style={{ marginTop: '8px', color: '#0A3B73', fontWeight: 500 }}>{loc.served}</p>
+                                                                                    )}
+                                                                                </td>
+                                                                                <td className="contact-info">
+                                                                                    <ul>
+                                                                                        <li>
+                                                                                            <strong>Phone Number:</strong> <a href="tel:0800750033">0800 750 033</a>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <strong>Email:</strong> <a className="color2" href="mailto:Info@mwalimubank.co.tz">Info@mwalimubank.co.tz</a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
 
-                                                        <div className="bottom-text text-center">
-                                                            <a 
-                                                                href="https://maps.app.goo.gl/RfmM2gzMjYkkkxvL7?g_st=ipc" 
-                                                                target="_blank" 
-                                                                rel="noopener noreferrer"
-                                                                className="get-location-btn"
-                                                                style={{
-                                                                    display: 'inline-block',
-                                                                    padding: '15px 40px',
-                                                                    backgroundImage: 'linear-gradient(0deg, #0A3B73 0%, #0E519A 100%)',
-                                                                    color: '#ffffff',
-                                                                    textDecoration: 'none',
-                                                                    borderRadius: '4px',
-                                                                    fontSize: '18px',
-                                                                    fontWeight: '500',
-                                                                    fontFamily: 'var(--thm-font-2)',
-                                                                    transition: 'all 0.3s ease',
-                                                                    boxShadow: '0px 2px 10px rgba(10, 59, 115, 0.3)'
-                                                                }}
-                                                                onMouseEnter={(e) => {
-                                                                    e.target.style.opacity = '0.9';
-                                                                    e.target.style.transform = 'translateY(-2px)';
-                                                                    e.target.style.boxShadow = '0px 4px 15px rgba(10, 59, 115, 0.4)';
-                                                                }}
-                                                                onMouseLeave={(e) => {
-                                                                    e.target.style.opacity = '1';
-                                                                    e.target.style.transform = 'translateY(0)';
-                                                                    e.target.style.boxShadow = '0px 2px 10px rgba(10, 59, 115, 0.3)';
-                                                                }}
-                                                            >
-                                                                Get Location
-                                                            </a>
+                                                                <div className="bottom-text text-center">
+                                                                    <a
+                                                                        href={mapsUrl}
+                                                                        target="_blank"
+                                                                        rel="noopener noreferrer"
+                                                                        className="get-location-btn"
+                                                                        style={{
+                                                                            display: 'inline-block',
+                                                                            padding: '15px 40px',
+                                                                            backgroundImage: 'linear-gradient(0deg, #0A3B73 0%, #0E519A 100%)',
+                                                                            color: '#ffffff',
+                                                                            textDecoration: 'none',
+                                                                            borderRadius: '4px',
+                                                                            fontSize: '18px',
+                                                                            fontWeight: '500',
+                                                                            fontFamily: 'var(--thm-font-2)',
+                                                                            transition: 'all 0.3s ease',
+                                                                            boxShadow: '0px 2px 10px rgba(10, 59, 115, 0.3)'
+                                                                        }}
+                                                                        onMouseEnter={(e) => {
+                                                                            e.target.style.opacity = '0.9';
+                                                                            e.target.style.transform = 'translateY(-2px)';
+                                                                            e.target.style.boxShadow = '0px 4px 15px rgba(10, 59, 115, 0.4)';
+                                                                        }}
+                                                                        onMouseLeave={(e) => {
+                                                                            e.target.style.opacity = '1';
+                                                                            e.target.style.transform = 'translateY(0)';
+                                                                            e.target.style.boxShadow = '0px 2px 10px rgba(10, 59, 115, 0.3)';
+                                                                        }}
+                                                                    >
+                                                                        Get Location
+                                                                    </a>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
+                                                );
+                                            })}
                                         </div>
                                     </div>
                                 </div>
