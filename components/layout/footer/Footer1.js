@@ -77,7 +77,7 @@ export default function Footer1() {
                         <li><Link href="/faq">FAQ</Link></li>
                         <li><Link href="/opportunities">Careers</Link></li>
                         <li><Link href="/privacy-policy">Privacy Policy</Link></li>
-                        <li><Link href="/mwalimu-website">Mwalimu Website</Link></li>
+                        <li><Link href="/loans-T&C">loans-T&C</Link></li>
                         </ul>
                     </div>
                     </div>

@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout"
 
 export const metadata = {
-    title: "Mwalimu Website | Mwalimu Commercial Bank",
+    title: "loans-T&C | Mwalimu Commercial Bank",
     description: "Loan terms and conditions for Mwalimu Commercial Bank mobile banking loans.",
 }
 
@@ -130,9 +130,9 @@ const sections = [
 const sectionTitle = { fontSize: 22, marginTop: 35, marginBottom: 12, color: "#143d78" }
 const paragraphStyle = { textAlign: "justify", marginBottom: 15 }
 
-export default function MwalimuWebsite() {
+export default function LoanTermsAndConditions() {
     return (
-        <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Mwalimu Website" headTitle="Mwalimu Website">
+        <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="loans-T&C" headTitle="loans-T&C">
             <section className="intro-style1-area">
                 <div className="container">
                     <div className="row">
